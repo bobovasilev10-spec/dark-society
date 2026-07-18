@@ -13,14 +13,10 @@ import * as baseService from "./services/baseService";
 import Loader from "./components/utils/Loader";
 import Header from "./components/Header/Header";
 import Foter from "./components/Foter/Foter";
-import Subscription from "./pages/Subscription/Subscription";
 
 import BGTranslations from "./locales/bg.json";
 import "react-toastify/dist/ReactToastify.css";
-import Clients from "./pages/Clients";
-import MedicalTeams from "./pages/MedicalTeams";
 import ContactUs from "./pages/ContactUs";
-import Camp from "./pages/Camp";
 import InfoPage from "./pages/InfoPage/InfoPage";
 
 // Lazy loading components
@@ -88,7 +84,7 @@ function App() {
                             path="/success"
                             element={<OrderConfirmation />}
                         />
-                        <Route path="/clients" element={<Clients />} />
+                        
                         <Route
                             path="/product/:slug"
                             element={<ProductDetailsPage />}
@@ -99,33 +95,14 @@ function App() {
                                 <Products categories={baseData?.categories} />
                             }
                         />
-                        <Route
-                            path="/subscription"
-                            element={
-                                <Subscription
-                                    subscriptions={baseData?.subcription}
-                                />
-                            }
-                        />
-                        <Route
-                            path="/subscription/:slug"
-                            element={
-                                <Subscription
-                                    subscriptions={baseData?.subcription}
-                                />
-                            }
-                        />
-                        <Route
-                            path="/medical-teams"
-                            element={<MedicalTeams />}
-                        />
+                        
                         <Route path="/contact" element={<ContactUs />} />
                         <Route path="/about-us" element={<About />} />
                         <Route path="/terms-of-use" element={<Terms />} />
                         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                         <Route path="/cookie-policy" element={<CookiePolicy />} />
                         <Route path="/:slug" element={<InfoPage />} />
-                        {/* <Route path="/yoloony-camp" element={<Camp />} /> */}
+                        
                         {/* <Route path="*" element={<Navigate to="/" replace />} /> */}
                     </Routes>
                 </Suspense>

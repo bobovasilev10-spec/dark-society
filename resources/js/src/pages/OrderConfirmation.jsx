@@ -266,13 +266,10 @@ export default function OrderConfirmation() {
 
                             <div className="space-y-5">
                                 {lastOreder?.products.map((item) => {
-                                    const product = item.product
-                                        ? item.product
-                                        : item.subscription;
+                                    const product = item.product;
                                     const product_options =
                                         normalizeOrderOptions(item);
-                                    const subscription_data =
-                                        item.subscription_data;
+                                    
                                     const { media, isVideo } =
                                         getProductMedia(product);
 
@@ -390,34 +387,7 @@ export default function OrderConfirmation() {
                                                 </div>
                                             </div>
 
-                                            {subscription_data &&
-                                                subscription_data.length > 0 && (
-                                                    <div className="mt-5 grid gap-3 border-t border-white/10 pt-5 sm:grid-cols-2 lg:grid-cols-3">
-                                                        {product.subscription_data_with_labels?.map(
-                                                            (dataItem) => (
-                                                                <div
-                                                                    key={
-                                                                        dataItem.key
-                                                                    }
-                                                                    className="border border-white/10 bg-white/[0.02] p-3"
-                                                                >
-                                                                    <span className="block text-[10px] uppercase tracking-[0.12em] text-white/35">
-                                                                        {
-                                                                            dataItem.label
-                                                                        }
-                                                                    </span>
-                                                                    <strong className="mt-1 block text-sm text-white/80">
-                                                                        {subscription_data?.[0]?.[
-                                                                            dataItem
-                                                                                .key
-                                                                        ] ||
-                                                                            "N/A"}
-                                                                    </strong>
-                                                                </div>
-                                                            )
-                                                        )}
-                                                    </div>
-                                                )}
+                                            
                                         </article>
                                     );
                                 })}

@@ -4,9 +4,7 @@ import { useLanguage } from "../../contexts/LanguageContext";
 
 const CartItem = ({ cartItem }) => {
     const { removeFromCart, updateCartItem } = useCart();
-    const product = cartItem.product
-        ? cartItem.product
-        : cartItem.subscription;
+    const product = cartItem.product;
 
     const { language } = useLanguage();
     const { t } = useTranslation();
@@ -23,29 +21,20 @@ const CartItem = ({ cartItem }) => {
     }
 
     const currentPrice =
-        cartItem?.product?.promo_price > 0
-            ? cartItem.product.promo_price
-            : cartItem?.product?.price ??
-              (cartItem?.subscription?.promo_price > 0
-                  ? cartItem.subscription.promo_price
-                  : cartItem?.subscription?.price);
+    cartItem?.product?.promo_price > 0
+        ? cartItem.product.promo_price
+        : cartItem.product.price;
 
     const oldPrice =
-        cartItem?.product?.promo_price > 0
-            ? cartItem.product.price
-            : cartItem?.subscription?.promo_price > 0
-              ? cartItem.subscription.price
-              : null;
+    cartItem?.product?.promo_price > 0
+        ? cartItem.product.price
+        : null;
 
     return (
         <li className="border-b border-white/10 py-5 last:border-b-0">
             <div className="grid grid-cols-[88px_1fr] gap-4 sm:grid-cols-[104px_1fr]">
                 <a
-                    href={
-                        product?.description
-                            ? `/product/${product.slug}`
-                            : `/subscription/${product.slug}`
-                    }
+                    href={`/product/${product.slug}`}
                     className="block overflow-hidden bg-white/[0.03]"
                 >
                     {(() => {
@@ -94,11 +83,7 @@ const CartItem = ({ cartItem }) => {
                     <div className="flex items-start justify-between gap-4">
                         <div className="min-w-0">
                             <a
-                                href={
-                                    product?.description
-                                        ? `/product/${product.slug}`
-                                        : `/subscription/${product.slug}`
-                                }
+                                href={`/product/${product.slug}`}
                                 className="line-clamp-2 text-sm font-bold uppercase tracking-[0.06em] text-white transition hover:text-white/60 sm:text-base"
                             >
                                 {product?.name?.[language]}

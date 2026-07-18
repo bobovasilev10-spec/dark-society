@@ -9,7 +9,6 @@ use App\Models\Coupon;
 use App\Models\Product;
 use App\Models\CartItem;
 use App\Models\CartCoupon;
-use App\Models\Subscription;
 
 class CartService
 {
@@ -38,17 +37,7 @@ class CartService
 
     public function requireDelivery()
     {
-        $requiers_delivery = false;
-        foreach ($this->cart_items as $cart_item) {
-            if ($cart_item->product) {
-                $requiers_delivery = true;
-            } else {
-                if ($cart_item->subscription->requires_delivery) {
-                    $requiers_delivery = true;
-                }
-            }
-        }
-        return $requiers_delivery;
+        return $this->cart_items->isNotEmpty();
     }
     public function getLastOrder()
     {
@@ -60,7 +49,7 @@ class CartService
         }
 
         $order = Order::query()
-            ->with(['products', 'products.product', 'products.subscription'])
+            ->with(['products', 'products.product'])
             //->where('id', 27) // TODO: change to last order
             ->where('id', $order_id)
             ->first();
@@ -90,18 +79,15 @@ class CartService
         return $weight;
     }
 
-    public function addToCart($item_id, $quantity, $options = [], $type = 'product')
+    public function addToCart($item_id, $quantity, $options = [])
     {
         // dd($item_id, $quantity, $options, $type);
         // Determine the model based on type
-        $item = ($type === 'subscription')
-            ? Subscription::query()->findOrFail($item_id)
-            : Product::query()->findOrFail($item_id);
+        $item = Product::query()->findOrFail($item_id);
 
-        // Determine the correct field (`product_id` or `subscription_id`)
-        $field = ($type === 'subscription') ? 'subscription_id' : 'product_id';
+        $field = 'product_id';
 
-        // Check if the same product/subscription is already in the cart
+        // Check if the same product is already in the cart
         if ($field === 'product_id') {
             $cart_item = $this->cart_items
                 ->where($field, $item_id)
@@ -114,13 +100,9 @@ class CartService
                     return isset($item->options[0]['id']) && $item->options[0]['id'] == $options[0]['id'];
                 })
                 ->first();
-        } else {
-            $cart_item = $this->cart_items
-                ->where($field, $item_id)
-                ->first();
-        }
+        } 
 
-        $price = $item->promo_price ? $item->promo_price : $item->price; // Get price from Product or Subscription
+        $price = $item->promo_price ? $item->promo_price : $item->price;
 
         if ($cart_item) {
             // If item already exists, increase quantity instead of creating new item
@@ -133,7 +115,7 @@ class CartService
             $cart_item = CartItem::query()->create([
                 'session_id' => session()->getId(),
                 'user_id' => auth()->id() ?: null,
-                $field => $item_id, // Dynamic key (product_id or subscription_id)
+                $field => $item_id, // Create the cart item for the selected product
                 'quantity' => $quantity,
                 'price' => $price,
                 'options' => $options,
@@ -210,7 +192,7 @@ class CartService
     private function loadCartItems()
     {
         // move cart items from session to user if user is logged in
-        $cart_items = CartItem::with('product', 'subscription')
+        $cart_items = CartItem::with('product')
             ->where('session_id', session()->getId())
             ->orWhere('user_id', auth()->id() ?: 0)
             ->get()

@@ -13,8 +13,6 @@ class CartItem extends Model
         'session_id',
         'user_id',
         'product_id',
-        'subscription_id',
-        'subscription_data',
         'quantity',
         'price',
         'options',
@@ -28,10 +26,7 @@ class CartItem extends Model
     {
         return $this->belongsTo(Product::class);
     }
-    public function subscription()
-    {
-        return $this->belongsTo(Subscription::class);
-    }
+    
     public function user()
     {
         return $this->belongsTo(User::class);

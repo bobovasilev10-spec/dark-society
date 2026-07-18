@@ -36,12 +36,11 @@ export const CartProvider = ({ children }) => {
         localStorage.removeItem("cart");
     };
 
-    const addToCart = (id, qty, selectedSize, subscription_id) => {
+    const addToCart = (id, qty, selectedSize) => {
         const requestData = {
             product_id: id,
             quantity: qty,
             option_id: selectedSize,
-            subscription_id,
         };
         cartService
             .addToCart(requestData)

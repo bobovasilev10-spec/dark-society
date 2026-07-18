@@ -179,8 +179,7 @@ class OrderController extends Controller
             $order_items_data[] = [
                 "order_id" => $order->id,
                 "product_id" => $cart_item->product_id,
-                'subscription_id' => $cart_item->subscription_id,
-                "name" => $cart_item->product ? $cart_item->product->name : $cart_item->subscription->name,
+                "name" => $cart_item->product->name,
                 "quantity" => $cart_item->quantity,
                 "price" => $cart_item->price,
                 "product_options" =>
@@ -192,13 +191,11 @@ class OrderController extends Controller
                         ];
                     }, $cart_item->options)
                 ),
-                "subscription_data" => isset($cart_item->subscription_id) && isset($request->subscription_data[$cart_item->id])
-                ? json_encode([$request->subscription_data[$cart_item->id]])
-                : json_encode([]),
+                
             ];
 
             // Get the image path
-            $imagePath = $cart_item->product ? $cart_item->product->image : $cart_item->subscription->image;
+            $imagePath = $cart_item->product->image;
 
             // Extract the file extension
             $extension = pathinfo($imagePath, PATHINFO_EXTENSION);
@@ -209,8 +206,8 @@ class OrderController extends Controller
             // Check if the extension belongs to a video format
             $isVideo = in_array(strtolower($extension), $videoExtensions);
             $mail_products[] = [
-                "name" => $cart_item->product ? $cart_item->product->name : $cart_item->subscription->name,
-                "image" => $cart_item->product ?  $cart_item->product->image : $cart_item->subscription->image,
+                "name" => $cart_item->product->name,
+                "image" => $cart_item->product->image,
                 "quantity" => $cart_item->quantity,
                 "single_price" => $cart_item->price,
                 "is_video" => $isVideo,

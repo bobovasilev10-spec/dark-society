@@ -89,10 +89,7 @@ class Order extends Model
     {
         return $this->hasMany(OrderItem::class);
     }
-    public function subscriptions()
-    {
-        return $this->hasMany(OrderItem::class);
-    }
+    
 
     public function getOrderNumberAttribute()
     {

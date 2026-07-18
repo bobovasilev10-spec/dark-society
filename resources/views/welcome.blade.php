@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" href={{ asset('images/yoloony-dark.png') }}>
+    <link rel="icon" type="image/png" href="{{ asset('images/logo2.webp') }}">
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @if (isset($ceo_tags))
@@ -30,8 +30,8 @@
     <meta name="RATING" content="GENERAL">
     <meta http-equiv="Content-Language" content="bg">
     <meta name="DISTRIBUTION" content="GLOBAL">
-    <meta name="AUTHOR" content="yoloony">
-    <meta name="COPYRIGHT" content="Copyright (c) 2025 yoloony">
+    <meta name="AUTHOR" content="Dark Society">
+    <meta name="COPYRIGHT" content="Copyright © {{ date('Y') }} Dark Society">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />

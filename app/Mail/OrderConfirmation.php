@@ -19,7 +19,7 @@ class OrderConfirmation extends Mailable
 
     public function build()
     {
-        return $this->subject('Поръчка Yoloony')
+        return $this->subject('Поръчка Dark Society')
             ->view('emails.order-confirmation');
     }
 

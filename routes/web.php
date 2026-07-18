@@ -9,9 +9,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\StripePaymentController;
-use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\ContactUsController;
-use App\Http\Controllers\CampController;
 
 
 // Auth routes
@@ -41,8 +39,6 @@ Route::get('/user-orders', [AuthController::class, 'userOrders'])->name('user-or
 
 // Base data routes
 Route::get('/base_json', [BaseController::class, 'baseData']);
-Route::get('/clients_json', [BaseController::class, 'getClients']);
-Route::get('/medical_json', [BaseController::class, 'getMedicalPersonnel']);
 Route::get('/info_page_json/{slug}', [BaseController::class, 'InfoPage']);
 
 // Product routes
@@ -83,7 +79,6 @@ Route::post('/changeLocale', [BaseController::class, 'changeLocale']);
 Route::post('/contact-us', [ContactUsController::class, 'store'])->name('contact-us.store');
 
 // Camp
-Route::post('/camp', [CampController::class, 'store'])->name('camp.store');
 
 Route::get('/{any}', [BaseController::class, 'index'])->where('any', '.*')->name('home');
 

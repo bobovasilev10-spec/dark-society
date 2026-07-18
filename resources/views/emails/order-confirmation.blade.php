@@ -1,1528 +1,454 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml"
-    xmlns:o="urn:schemas-microsoft-com:office:office">
-
+<!doctype html>
+<html lang="bg" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <!--[if (gte mso 9)|(IE)]>
-      <xml>
-         <o:OfficeDocumentSettings>
-            <o:AllowPNG />
-            <o:PixelsPerInch>96</o:PixelsPerInch>
-         </o:OfficeDocumentSettings>
-      </xml>
-      <![endif]-->
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- So that mobile will display zoomed in -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <!-- enable media queries for windows phone 8 -->
-    <meta name="format-detection" content="telephone=no" />
-    <!-- disable auto telephone linking in iOS -->
-    <meta name="format-detection" content="date=no" />
-    <!-- disable auto date linking in iOS -->
-    <meta name="format-detection" content="address=no" />
-    <!-- disable auto address linking in iOS -->
-    <meta name="format-detection" content="email=no" />
-    <!-- disable auto email linking in iOS -->
-    <meta name="color-scheme" content="only" />
-    <title></title>
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet" />
-    <style type="text/css">
-        /*Basics*/
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <meta name="supported-color-schemes" content="dark">
+    <title>Потвърждение на поръчка</title>
+
+    <style>
         body {
-            margin: 0px !important;
-            padding: 0px !important;
-            display: block !important;
-            min-width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
             width: 100% !important;
-            -webkit-text-size-adjust: none;
+            background: #0a0a0a;
+            color: #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
         }
 
         table {
-            border-spacing: 0;
-            mso-table-lspace: 0pt;
-            mso-table-rspace: 0pt;
-        }
-
-        table td {
             border-collapse: collapse;
-            mso-line-height-rule: exactly;
+            border-spacing: 0;
+            mso-table-lspace: 0;
+            mso-table-rspace: 0;
         }
 
-        td img {
+        img {
+            display: block;
+            border: 0;
+            outline: none;
+            text-decoration: none;
             -ms-interpolation-mode: bicubic;
-            width: auto;
-            max-width: auto;
-            height: auto;
-            margin: auto;
-            display: block !important;
-            border: 0px;
         }
 
-        td p {
-            margin: 0;
-            padding: 0;
-        }
-
-        td div {
-            margin: 0;
-            padding: 0;
-        }
-
-        td a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        /*Outlook*/
-        .ExternalClass {
-            width: 100%;
-        }
-
-        .ExternalClass,
-        .ExternalClass p,
-        .ExternalClass span,
-        .ExternalClass font,
-        .ExternalClass td,
-        .ExternalClass div {
-            line-height: inherit;
-        }
-
-        .ReadMsgBody {
-            width: 100%;
-            background-color: #ffffff;
-        }
-
-        /* iOS BLUE LINKS */
-        a[x-apple-data-detectors] {
-            color: inherit !important;
-            text-decoration: none !important;
-            font-size: inherit !important;
-            font-family: inherit !important;
-            font-weight: inherit !important;
-            line-height: inherit !important;
-        }
-
-        /*Gmail blue links*/
-        u+#body a {
+        a {
             color: inherit;
             text-decoration: none;
-            font-size: inherit;
-            font-family: inherit;
-            font-weight: inherit;
-            line-height: inherit;
         }
 
-        /*Buttons fix*/
-        .undoreset a,
-        .undoreset a:hover {
-            text-decoration: none !important;
+        .wrapper {
+            width: 100%;
+            background: #0a0a0a;
         }
 
-        .yshortcuts a {
-            border-bottom: none !important;
+        .container {
+            width: 640px;
+            max-width: 640px;
         }
 
-        .ios-footer a {
-            color: #aaaaaa !important;
-            text-decoration: none;
+        .card {
+            background: #151515;
+            border: 1px solid #2b2b2b;
         }
 
-        .nowrap {
-            white-space: nowrap;
+        .muted {
+            color: #a7a7a7;
         }
 
-        /*Responsive*/
-        @media screen and (max-width: 639px) {
-            table.row {
+        .accent {
+            color: #ffffff;
+        }
+
+        .divider {
+            border-top: 1px solid #333333;
+        }
+
+        @media only screen and (max-width: 680px) {
+            .container,
+            .mobile-full {
                 width: 100% !important;
                 max-width: 100% !important;
             }
 
-            td.row {
+            .mobile-pad {
+                padding-left: 18px !important;
+                padding-right: 18px !important;
+            }
+
+            .mobile-stack {
+                display: block !important;
                 width: 100% !important;
-                max-width: 100% !important;
             }
 
-            .img-responsive img {
-                width: 100% !important;
-                max-width: 100% !important;
-                height: auto !important;
-                margin: auto;
-            }
-
-            .center-float {
-                float: none !important;
-                margin: auto !important;
-            }
-
-            .center-text {
+            .mobile-center {
                 text-align: center !important;
             }
 
-            .container-padding {
-                width: 100% !important;
-                padding-left: 15px !important;
-                padding-right: 15px !important;
+            .product-image {
+                width: 140px !important;
+                max-width: 140px !important;
+                margin: 0 auto 18px auto !important;
             }
 
-            .container-padding10 {
-                width: 100% !important;
-                padding-left: 10px !important;
-                padding-right: 10px !important;
-            }
-
-            .container-padding25 {
-                width: 100% !important;
-                padding-left: 25px !important;
-                padding-right: 25px !important;
-            }
-
-            .hide-mobile {
-                display: none !important;
-            }
-
-            .menu-container {
-                text-align: center !important;
-            }
-
-            .autoheight {
-                height: auto !important;
-            }
-
-            .m-padding-10 {
-                margin: 10px 0 !important;
-            }
-
-            .m-padding-15 {
-                margin: 15px 0 !important;
-            }
-
-            .m-padding-20 {
-                margin: 20px 0 !important;
-            }
-
-            .m-padding-30 {
-                margin: 30px 0 !important;
-            }
-
-            .m-padding-40 {
-                margin: 40px 0 !important;
-            }
-
-            .m-padding-50 {
-                margin: 50px 0 !important;
-            }
-
-            .m-padding-60 {
-                margin: 60px 0 !important;
-            }
-
-            .m-padding-top10 {
-                margin: 30px 0 0 0 !important;
-            }
-
-            .m-padding-top15 {
-                margin: 15px 0 0 0 !important;
-            }
-
-            .m-padding-top20 {
-                margin: 20px 0 0 0 !important;
-            }
-
-            .m-padding-top30 {
-                margin: 30px 0 0 0 !important;
-            }
-
-            .m-padding-top40 {
-                margin: 40px 0 0 0 !important;
-            }
-
-            .m-padding-top50 {
-                margin: 50px 0 0 0 !important;
-            }
-
-            .m-padding-top60 {
-                margin: 60px 0 0 0 !important;
-            }
-
-            .m-height10 {
-                font-size: 10px !important;
-                line-height: 10px !important;
-                height: 10px !important;
-            }
-
-            .m-height15 {
-                font-size: 15px !important;
-                line-height: 15px !important;
-                height: 15px !important;
-            }
-
-            .m-height20 {
-                font-size: 20px !important;
-                line-height: 20px !important;
-                height: 20px !important;
-            }
-
-            .m-height25 {
-                font-size: 25px !important;
-                line-height: 25px !important;
-                height: 25px !important;
-            }
-
-            .m-height30 {
+            .headline {
                 font-size: 30px !important;
-                line-height: 30px !important;
-                height: 30px !important;
+                line-height: 36px !important;
             }
-
-            .rwd-on-mobile {
-                display: inline-block !important;
-                padding: 5px !important;
-            }
-
-            .center-on-mobile {
-                text-align: center !important;
-            }
-        }
-
-        .bg-back {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                url("https://yoloony.com/images/za_saita_back.webp") no-repeat center center fixed;
-            background-size: cover;
-        }
-
-        .first-border:first-child {
-            border-radius: 36px 36px 0 0;
         }
     </style>
 </head>
 
-<body
-    style="
-      margin-top: 0;
-      margin-bottom: 0;
-      padding-top: 0;
-      padding-bottom: 0;
-      width: 100%;
-      -webkit-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%;
-      "
-    bgcolor="#F0F0F0">
-    <span class="preheader-text"
-        style="
-         color: transparent;
-         height: 0;
-         max-height: 0;
-         max-width: 0;
-         opacity: 0;
-         overflow: hidden;
-         visibility: hidden;
-         width: 0;
-         display: none;
-         mso-hide: all;
-         "></span>
-    <div
-        style="
-         display: none;
-         font-size: 0px;
-         line-height: 0px;
-         max-height: 0px;
-         max-width: 0px;
-         opacity: 0;
-         overflow: hidden;
-         visibility: hidden;
-         mso-hide: all;
-         ">
+<body bgcolor="#0a0a0a">
+    <div style="display:none;max-height:0;overflow:hidden;opacity:0;color:transparent;">
+        Поръчката ти в Dark Society е приета.
     </div>
-    <table border="0" align="center" cellpadding="0" cellspacing="0" width="100%"
-        style="width: 100%; max-width: 100%">
+
+    <table role="presentation" width="100%" class="wrapper" bgcolor="#0a0a0a">
         <tr>
-            <!-- Outer Table -->
-            <td align="center" Simpli class="bg-back" data-composer>
-                <table border="0" align="center" cellpadding="0" cellspacing="0" role="presentation"
-                    class="row container-padding" width="640" style="width: 640px; max-width: 640px" Simpli>
-                    <!-- Preheader -->
+            <td align="center" style="padding: 24px 12px 40px;">
+                <table role="presentation" width="640" class="container">
+
                     <tr>
-                        <td height="20" style="font-size: 20px; line-height: 20px" Simpli>
-                            &nbsp;
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="center-text" align="right">
-                            <a href="#" target="_blank"
-                                style="
-                           font-family: 'Roboto', Arial, Helvetica, sans-serif;
-                           font-size: 12px;
-                           line-height: 16px;
-                           font-style: normal;
-                           font-weight: 400;
-                           color: #666666;
-                           text-decoration: none;
-                           letter-spacing: 0px;
-                           "></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td height="30" style="font-size: 30px; line-height: 30px" Simpli>
-                            &nbsp;
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="center" class="center-text">
-                            <a href="https://yoloony.com/" target="_blank" style="font-weight: bold">
-                                <img mc:edit="mc1"
-                                    style="
-                           width: 60px;
-                           border: 0px;
-                           display: inline !important;
-                           "
-                                    src="https://yoloony.com/images/logo2.avif" width="100" border="0"
-                                    editable="true" Simpli data-image-edit Simpli alt="logo" />
+                        <td align="center" style="padding: 12px 20px 28px;">
+                            <a href="{{ config('app.url') }}" target="_blank">
+                                <img
+                                    src="{{ asset('images/logo2.webp') }}"
+                                    width="90"
+                                    alt="Dark Society"
+                                    style="width:90px;max-width:90px;height:auto;"
+                                >
                             </a>
                         </td>
                     </tr>
+
                     <tr>
-                        <td height="30" style="font-size: 30px; line-height: 30px" Simpli>
-                            &nbsp;
-                        </td>
-                    </tr>
-                    <!-- Preheader -->
-                </table>
-                <table border="0" align="center" cellpadding="0" cellspacing="0" class="row" role="presentation"
-                    width="640" style="width: 640px; max-width: 640px" Simpli>
-                    <!-- simpli-header-13 -->
-                    <tr>
-                        <td align="center">
-                            <table border="0" align="center" cellpadding="0" cellspacing="0"
-                                class="row container-padding10" role="presentation" width="640"
-                                style="width: 640px; max-width: 640px; height: 100%">
-                                <!-- bg-image -->
+                        <td class="card mobile-pad" bgcolor="#151515"
+                            style="padding: 48px 44px; border-radius: 18px 18px 0 0;">
+                            <table role="presentation" width="100%">
                                 <tr>
-                                    <td align="center" Simpli bgcolor="#F4F4F4" style="border-radius: 36px">
-                                        <!--[if (gte mso 9)|(IE)]>
-                                 <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:640px;">
-                                    <v:fill type="frame" src="images/header-13.jpg" color="#F4F4F4" />
-                                    <v:textbox style="mso-fit-shape-to-text:true;" inset="0,0,0,0">
-                                       <![endif]-->
-                                        <div>
-                                            <!-- simpli-header-bg-image -->
-                                            <table border="0" align="center" cellpadding="0" cellspacing="0"
-                                                role="presentation" width="100%"
-                                                style="width: 100%; max-width: 100%; height: 100%">
-                                                <tr>
-                                                    <td align="center"
-                                                        background="https://yoloony.com/images/za-saita.png"
-                                                        data-bg-image
-                                                        style="
-                                                   background-size: cover;
-                                                   background-repeat: no-repeat;
-                                                   background-position: center center;
-                                                   border-radius: 36px;
-                                                   ">
-                                                        <!-- Content -->
-                                                        <table border="0" align="center" cellpadding="0"
-                                                            cellspacing="0" role="presentation" class="row"
-                                                            width="600" style="width: 600px; max-width: 600px">
-                                                            <tr>
-                                                                <td height="320" valign="bottom"
-                                                                    class="container-padding"
-                                                                    style="font-size: 640px; line-height: 640px"
-                                                                    Simpli>
-                                                                    <table border="0" align="center"
-                                                                        cellpadding="0" cellspacing="0"
-                                                                        role="presentation" width="100%"
-                                                                        style="width: 100%; max-width: 100%">
-                                                                        <tr>
-                                                                            <td align="center" Simpli
-                                                                                bgcolor="transparent" height="40"
-                                                                                style="
-                                                                     height: 40px;
-                                                                     font-size: 40px;
-                                                                     line-height: 36px;
-                                                                     border-radius: 36px 36px 0 0;
-                                                                     "
-                                                                                class="container-padding">
-                                                                                &nbsp;
-                                                                            </td>
-                                                                        </tr>
-                                                                    </table>
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                        <!-- Content -->
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                            <!-- simpli-header-bg-image -->
-                                        </div>
-                                        <!--[if (gte mso 9)|(IE)]>
-                                    </v:textbox>
-                                 </v:rect>
-                                 <![endif]-->
+                                    <td align="center"
+                                        style="font-size:12px;line-height:18px;letter-spacing:3px;
+                                        font-weight:bold;color:#a7a7a7;text-transform:uppercase;">
+                                        DARK SOCIETY
                                     </td>
                                 </tr>
-                                <!-- bg-image -->
-                            </table>
-                            <table border="0" align="center" cellpadding="0" cellspacing="0"
-                                role="presentation" class="row container-padding25" width="600"
-                                style="width: 600px; max-width: 600px">
-                                <!-- basic-info -->
-                                <tr>
-                                    <td align="center" Simpli bgcolor="transparent"
-                                        style="
-                                 border-radius: 0 0 36px 36px;
-                                 border-bottom: solid 6px #0052bf;
-                                 ">
-                                        <!-- content -->
-                                        <table border="0" align="center" cellpadding="0" cellspacing="0"
-                                            role="presentation" class="row container-padding" width="520"
-                                            style="width: 520px; max-width: 520px">
-                                            <tr>
-                                                <td class="center-text" Simpli align="center"
-                                                    style="
-                                          font-family: 'Roboto', Arial, Helvetica,
-                                          sans-serif;
-                                          font-size: 12px;
-                                          line-height: 24px;
-                                          font-weight: 900;
-                                          font-style: normal;
-                                          color: #0052bf;
-                                          text-decoration: none;
-                                          letter-spacing: 2px;
-                                          ">
-                                                    <singleline>
-                                                        <div mc:edit Simpli>Здравейте, {{ $mailData['buyerName'] }}!
-                                                        </div>
-                                                    </singleline>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="center-text" Simpli align="center"
-                                                    style="
-                                          font-family: 'Roboto', Arial, Helvetica,
-                                          sans-serif;
-                                          font-size: 48px;
-                                          line-height: 54px;
-                                          font-weight: 700;
-                                          font-style: normal;
-                                          color: #fff;
-                                          text-decoration: none;
-                                          letter-spacing: 0px;
-                                          ">
-                                                    <singleline>
-                                                        <div mc:edit Simpli>
-                                                            Благодарим ти за поръчката!
-                                                        </div>
-                                                    </singleline>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td height="15" style="font-size: 15px; line-height: 15px" Simpli>
-                                                    &nbsp;
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="center-text" Simpli align="center"
-                                                    style="
-                                          font-family: 'Roboto', Arial, Helvetica,
-                                          sans-serif;
-                                          font-size: 16px;
-                                          line-height: 26px;
-                                          font-weight: 300;
-                                          font-style: normal;
-                                          color: #fff;
-                                          text-decoration: none;
-                                          letter-spacing: 0px;
-                                          ">
-                                                    <singleline>
-                                                        <div mc:edit Simpli>
-                                                            Твоята поръчка е приета и ще бъде обработена в най-кратък
-                                                            срок.<br />
-                                                            Ще получиш известие по електронна поща, когато тя бъде
-                                                            готова <br />
-                                                            за получаване или бъде изпратена.
-                                                        </div>
-                                                    </singleline>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td height="25" style="font-size: 25px; line-height: 25px" Simpli>
-                                                    &nbsp;
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td align="center">
-                                                    <!-- Use Code -->
-                                                    <table border="0" cellspacing="0" cellpadding="0"
-                                                        role="presentation" align="center" class="row"
-                                                        width="480" style="width: 480px; max-width: 480px">
-                                                        <tr>
-                                                            <td align="center" Simpli bgcolor="#0052bf"
-                                                                style="border-radius: 10px">
-                                                                <!-- Content -->
-                                                                <table border="0" cellspacing="0" cellpadding="0"
-                                                                    role="presentation" align="center" class="row"
-                                                                    width="480"
-                                                                    style="width: 480px; max-width: 480px">
-                                                                    <tr>
-                                                                        <td height="20"
-                                                                            style="
-                                                            font-size: 20px;
-                                                            line-height: 20px;
-                                                            ">
-                                                                            &nbsp;
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td class="center-text" Simpli align="center"
-                                                                            style="
-                                                            font-family: 'Roboto', Arial,
-                                                            Helvetica, sans-serif;
-                                                            font-size: 22px;
-                                                            line-height: 26px;
-                                                            font-weight: 400;
-                                                            font-style: normal;
-                                                            color: #ffffff;
-                                                            text-decoration: none;
-                                                            letter-spacing: 0px;
-                                                            ">
-                                                                            <singleline>
-                                                                                <div mc:edit Simpli>
-                                                                                    ПОРЪЧКА:
-                                                                                    <strong
-                                                                                        style="color: #ffffff">{{ $mailData['order_id'] }}</strong>
-                                                                                </div>
-                                                                            </singleline>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td height="20"
-                                                                            style="
-                                                            font-size: 20px;
-                                                            line-height: 20px;
-                                                            ">
-                                                                            &nbsp;
-                                                                        </td>
-                                                                    </tr>
-                                                                </table>
-                                                                <!-- Content -->
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                    <!-- User Code -->
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td align="center">
-                                                    <!-- Content -->
-                                                    <table border="0" align="center" cellpadding="0"
-                                                        cellspacing="0" role="presentation" class="row"
-                                                        width="480" style="width: 480px; max-width: 480px">
-                                                        <tr>
-                                                            <td height="20"
-                                                                style="font-size: 20px; line-height: 20px" Simpli>
-                                                                &nbsp;
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td align="center">
-                                                                <!--[if (gte mso 9)|(IE)]>
-                                                   <table border="0" cellpadding="0" cellspacing="0">
-                                                      <tr>
-                                                         <td>
-                                                            <![endif]-->
-                                                                <!-- column -->
-                                                                <table border="0" align="left" cellpadding="0"
-                                                                    cellspacing="0" role="presentation"
-                                                                    class="row" width="235"
-                                                                    style="width: 235px; max-width: 235px">
-                                                                    <tr>
-                                                                        <td class="center-text" Simpli align="left"
-                                                                            style="
-                                                                     font-family: 'Roboto', Arial,
-                                                                     Helvetica, sans-serif;
-                                                                     font-size: 20px;
-                                                                     line-height: 24px;
-                                                                     font-weight: 700;
-                                                                     font-style: normal;
-                                                                     color: #fff;
-                                                                     text-decoration: none;
-                                                                     letter-spacing: 0px;
-                                                                     ">
-                                                                            <singleline>
-                                                                                <div mc:edit Simpli>
-                                                                                    Детайли за доставка:
-                                                                                </div>
-                                                                            </singleline>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td height="10"
-                                                                            style="
-                                                                     font-size: 10px;
-                                                                     line-height: 10px;
-                                                                     "
-                                                                            Simpli>
-                                                                            &nbsp;
-                                                                        </td>
-                                                                    </tr>
-                                                                    {{-- {{ $mailData['deliveryType'] }} --}}
-                                                                </table>
-                                                                <!-- column -->
-                                                                <!--[if (gte mso 9)|(IE)]>
-                                                         </td>
-                                                         <td>
-                                                            <![endif]-->
-                                                                <!-- column -->
-                                                                <table border="0" align="right" cellpadding="0"
-                                                                    cellspacing="0" role="presentation"
-                                                                    class="row m-padding-top20" width="235"
-                                                                    style="width: 235px; max-width: 235px">
-                                                                    <tr>
-                                                                        <td class="center-text" Simpli align="left"
-                                                                            style="
-                                                                     font-family: 'Roboto', Arial,
-                                                                     Helvetica, sans-serif;
-                                                                     font-size: 20px;
-                                                                     line-height: 24px;
-                                                                     font-weight: 700;
-                                                                     font-style: normal;
-                                                                     color: #fff;
-                                                                     text-decoration: none;
-                                                                     letter-spacing: 0px;
-                                                                     ">
-                                                                            <singleline>
-                                                                                <div mc:edit Simpli>
-                                                                                    {{ $mailData['deliveryType'] }}
-                                                                                </div>
-                                                                            </singleline>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td height="10"
-                                                                            style="
-                                                                     font-size: 10px;
-                                                                     line-height: 10px;
-                                                                     "
-                                                                            Simpli>
-                                                                            &nbsp;
-                                                                        </td>
-                                                                    </tr>
-                                                                    <!-- <tr>
-                                                                  <td class="center-text" Simpli align="left" style="
-                                                                  font-family: 'Roboto', Arial,
-                                                                  Helvetica, sans-serif;
-                                                                  font-size: 16px;
-                                                                  line-height: 20px;
-                                                                  font-weight: 400;
-                                                                  font-style: normal;
-                                                                  color: #666666;
-                                                                  text-decoration: none;
-                                                                  letter-spacing: 0px;
-                                                                  ">
-                                                                      <singleline>
-                                                                          <div mc:edit Simpli>
-                                                                              28.06.2023 г. – 02.07.2023 г.
-                                                                          </div>
-                                                                      </singleline>
-                                                                  </td>
-                                                                  </tr> -->
-                                                                </table>
-                                                                <!-- column -->
-                                                                <!--[if (gte mso 9)|(IE)]>
-                                                         </td>
-                                                      </tr>
-                                                   </table>
-                                                   <![endif]-->
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td height="10"
-                                                                style="font-size: 10px; line-height: 10px" Simpli>
-                                                                &nbsp;
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                    <!-- Content -->
-                                                </td>
-                                            </tr>
 
+                                <tr>
+                                    <td align="center" class="headline"
+                                        style="padding-top:14px;font-size:40px;line-height:46px;
+                                        font-weight:bold;color:#ffffff;">
+                                        Благодарим ти за поръчката!
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td align="center"
+                                        style="padding-top:18px;font-size:16px;line-height:26px;color:#cfcfcf;">
+                                        Здравей, {{ $mailData['buyerName'] }}.<br>
+                                        Поръчката ти е приета и ще бъде обработена възможно най-скоро.
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td align="center" style="padding-top:28px;">
+                                        <table role="presentation" width="100%" bgcolor="#050505"
+                                            style="background:#050505;border:1px solid #333333;border-radius:12px;">
+                                            <tr>
+                                                <td align="center"
+                                                    style="padding:18px;font-size:14px;line-height:20px;
+                                                    color:#a7a7a7;letter-spacing:1px;">
+                                                    НОМЕР НА ПОРЪЧКАТА
+                                                    <div style="padding-top:5px;font-size:22px;line-height:28px;
+                                                        font-weight:bold;color:#ffffff;">
+                                                        #{{ $mailData['order_id'] }}
+                                                    </div>
+                                                </td>
+                                            </tr>
                                         </table>
-                                        <singleline>
-                                            <div mc:edit Simpli style="font-size: 17px;margin: 12px 0;color: #0052bf">
-                                                @if (isset($mailData['delivery_data']['office']))
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="card mobile-pad" bgcolor="#151515"
+                            style="padding: 0 44px 38px; border-left:1px solid #2b2b2b;
+                            border-right:1px solid #2b2b2b;">
+                            <table role="presentation" width="100%">
+                                <tr>
+                                    <td class="divider" style="padding-top:30px;"></td>
+                                </tr>
+
+                                <tr>
+                                    <td style="padding-top:26px;font-size:20px;line-height:26px;
+                                        font-weight:bold;color:#ffffff;">
+                                        Доставка и плащане
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td style="padding-top:18px;">
+                                        <table role="presentation" width="100%">
+                                            <tr>
+                                                <td class="mobile-stack" width="50%" valign="top"
+                                                    style="padding:0 12px 14px 0;">
+                                                    <div style="font-size:12px;line-height:18px;color:#8d8d8d;
+                                                        text-transform:uppercase;letter-spacing:1px;">
+                                                        Начин на доставка
+                                                    </div>
+                                                    <div style="padding-top:5px;font-size:16px;line-height:24px;
+                                                        color:#ffffff;">
+                                                        {{ $mailData['deliveryType'] }}
+                                                    </div>
+                                                </td>
+
+                                                <td class="mobile-stack" width="50%" valign="top"
+                                                    style="padding:0 0 14px 12px;">
+                                                    <div style="font-size:12px;line-height:18px;color:#8d8d8d;
+                                                        text-transform:uppercase;letter-spacing:1px;">
+                                                        Начин на плащане
+                                                    </div>
+                                                    <div style="padding-top:5px;font-size:16px;line-height:24px;
+                                                        color:#ffffff;">
+                                                        {{ $mailData['paymentMethod'] }}
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+
+                                @if (
+                                    !empty($mailData['delivery_data']['office']) ||
+                                    !empty($mailData['delivery_data']['address'])
+                                )
+                                    <tr>
+                                        <td style="padding-top:10px;">
+                                            <div style="font-size:12px;line-height:18px;color:#8d8d8d;
+                                                text-transform:uppercase;letter-spacing:1px;">
+                                                Данни за доставка
+                                            </div>
+                                            <div style="padding-top:5px;font-size:16px;line-height:24px;
+                                                color:#ffffff;">
+                                                @if (!empty($mailData['delivery_data']['office']))
                                                     {!! $mailData['delivery_data']['office'] !!}
-                                                @elseif (isset($mailData['delivery_data']['address']))
+                                                @elseif (!empty($mailData['delivery_data']['address']))
                                                     {!! $mailData['delivery_data']['address'] !!}
                                                 @endif
                                             </div>
-                                        </singleline>
-                                        <!-- content -->
-                                    </td>
-                                </tr>
-                                <!-- basic-info -->
+                                        </td>
+                                    </tr>
+                                @endif
                             </table>
                         </td>
                     </tr>
-                    <!-- simpli-header-13 -->
-                </table>
-                <table border="0" align="center" cellpadding="0" cellspacing="0" role="presentation"
-                    class="row container-padding25" width="600" style="width: 600px; max-width: 600px" Simpli>
-                    <!-- content-3A -->
-                    <tr>
-                        <td height="40" style="font-size: 40px; line-height: 40px" Simpli>
-                            &nbsp;
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="center-text" Simpli align="center"
-                            style="
-                        font-family: 'Roboto', Arial, Helvetica, sans-serif;
-                        font-size: 12px;
-                        line-height: 24px;
-                        font-weight: 900;
-                        font-style: normal;
-                        color: #0052bf;
-                        text-decoration: none;
-                        letter-spacing: 2px;
-                        ">
-                            <singleline>
-                                <div mc:edit Simpli>Съдържание на поръчката</div>
-                            </singleline>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="center-text" Simpli align="center"
-                            style="
-                        font-family: 'Roboto', Arial, Helvetica, sans-serif;
-                        font-size: 28px;
-                        line-height: 34px;
-                        font-weight: 700;
-                        font-style: normal;
-                        color: #fff;
-                        text-decoration: none;
-                        letter-spacing: 0px;
-                        ">
-                            <singleline>
-                                <div mc:edit Simpli>Вашите продукти</div>
-                            </singleline>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td height="20" style="font-size: 20px; line-height: 20px" Simpli>
-                            &nbsp;
-                        </td>
-                    </tr>
-                    @foreach ($mailData['products'] as $product)
-                        <tr>
-                            <td align="center" Simpli bgcolor="transparent" class="first-border" style="">
-                                <!-- content -->
-                                <table border="0" align="center" cellpadding="0" cellspacing="0"
-                                    role="presentation" class="row container-padding" width="520"
-                                    style="width: 520px; max-width: 520px">
-                                    <tr>
-                                        <td height="40" style="font-size: 40px; line-height: 40px" Simpli>
-                                            &nbsp;
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td align="center">
-                                            <!--[if (gte mso 9)|(IE)]>
-                                 <table border="0" cellpadding="0" cellspacing="0">
-                                    <tr>
-                                       <td>
-                                          <![endif]-->
-                                            <!-- column -->
-                                            <table border="0" align="left" cellpadding="0" cellspacing="0"
-                                                role="presentation" class="row" width="240"
-                                                style="width: 240px; max-width: 240px">
-                                                <tr>
-                                                    <td align="center">
-                                                        @if ($product['is_video'])
-                                                            <video width="100%" controls autoplay loop muted>
-                                                               <source src="https://yoloony.com/storage/{{ $product['image'] }}" type="video/mp4">
-                                                               Your browser does not support the video tag.
-                                                           </video>
-                                                        @else
 
-                                                        <img mc:edit="mc2"
-                                                            style="
-                                                      display: block;
-                                                      width: 100%;
-                                                      max-width: 160px;
-                                                      border: 0px;
-                                                      border-radius: 12px;
-                                                      "
-                                                            data-image-edit width="160"
-                                                            src="https://yoloony.com/storage/{{ $product['image'] }}"
-                                                            border="0" editable="true" alt="picture" />
+                    <tr>
+                        <td class="card mobile-pad" bgcolor="#151515"
+                            style="padding: 0 44px 12px; border-left:1px solid #2b2b2b;
+                            border-right:1px solid #2b2b2b;">
+                            <table role="presentation" width="100%">
+                                <tr>
+                                    <td class="divider" style="padding-top:30px;"></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:26px 0 18px;font-size:20px;line-height:26px;
+                                        font-weight:bold;color:#ffffff;">
+                                        Продукти
+                                    </td>
+                                </tr>
+
+                                @foreach ($mailData['products'] as $product)
+                                    <tr>
+                                        <td style="padding:0 0 22px;">
+                                            <table role="presentation" width="100%" bgcolor="#0d0d0d"
+                                                style="background:#0d0d0d;border:1px solid #2d2d2d;
+                                                border-radius:12px;">
+                                                <tr>
+                                                    <td class="mobile-stack" width="170" valign="top"
+                                                        style="padding:18px;">
+                                                        @if (empty($product['is_video']))
+                                                            <img
+                                                                src="{{ asset('storage/' . $product['image']) }}"
+                                                                width="134"
+                                                                alt="{{ $product['name'] }}"
+                                                                class="product-image"
+                                                                style="width:134px;max-width:134px;height:auto;
+                                                                border-radius:8px;"
+                                                            >
+                                                        @else
+                                                            <table role="presentation" width="134" height="134"
+                                                                class="product-image" bgcolor="#1d1d1d"
+                                                                style="width:134px;height:134px;background:#1d1d1d;
+                                                                border-radius:8px;">
+                                                                <tr>
+                                                                    <td align="center"
+                                                                        style="font-size:13px;line-height:20px;
+                                                                        color:#a7a7a7;padding:12px;">
+                                                                        VIDEO PRODUCT
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        @endif
+                                                    </td>
+
+                                                    <td class="mobile-stack" valign="top"
+                                                        style="padding:18px 18px 18px 0;">
+                                                        <div style="font-size:18px;line-height:25px;
+                                                            font-weight:bold;color:#ffffff;">
+                                                            {{ $product['name'] }}
+                                                        </div>
+
+                                                        @if (!empty($product['product_options']))
+                                                            <div style="padding-top:10px;font-size:14px;
+                                                                line-height:22px;color:#c6c6c6;">
+                                                                @foreach ($product['product_options'] as $option)
+                                                                    <div>
+                                                                        <strong>{{ $option['option_name'] }}:</strong>
+                                                                        {{ $option['name'] }}
+                                                                    </div>
+                                                                @endforeach
+                                                            </div>
                                                         @endif
 
+                                                        <div style="padding-top:10px;font-size:14px;
+                                                            line-height:22px;color:#c6c6c6;">
+                                                            Количество:
+                                                            <strong style="color:#ffffff;">
+                                                                {{ $product['quantity'] }}
+                                                            </strong>
+                                                        </div>
+
+                                                        <div style="padding-top:4px;font-size:14px;
+                                                            line-height:22px;color:#c6c6c6;">
+                                                            Единична цена:
+                                                            <strong style="color:#ffffff;">
+                                                                {{ number_format((float) $product['single_price'], 2) }} €
+                                                            </strong>
+                                                        </div>
+
+                                                        <div style="padding-top:4px;font-size:14px;
+                                                            line-height:22px;color:#c6c6c6;">
+                                                            Общо:
+                                                            <strong style="color:#ffffff;">
+                                                                {{ number_format(
+                                                                    (float) $product['single_price'] * (int) $product['quantity'],
+                                                                    2
+                                                                ) }} €
+                                                            </strong>
+                                                        </div>
                                                     </td>
                                                 </tr>
                                             </table>
-                                            <!-- column -->
-                                            <!--[if (gte mso 9)|(IE)]>
-                                       </td>
-                                       <td>
-                                          <![endif]-->
-                                            <!-- gap -->
-                                            <table border="0" align="left" cellpadding="0" cellspacing="0"
-                                                role="presentation" class="row" width="30"
-                                                style="width: 30px; max-width: 30px">
-                                                <tr>
-                                                    <td height="30" style="font-size: 30px; line-height: 30px">
-                                                        &nbsp;
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                            <!-- gap -->
-                                            <!--[if (gte mso 9)|(IE)]>
-                                       </td>
-                                       <td>
-                                          <![endif]-->
-                                            <!-- column -->
-                                            <table border="0" align="left" cellpadding="0" cellspacing="0"
-                                                role="presentation" class="row" width="250"
-                                                style="width: 250px; max-width: 250px">
-                                                <tr>
-                                                    <td class="center-text" Simpli align="left"
-                                                        style="
-                                                   font-family: 'Roboto', Arial, Helvetica,
-                                                   sans-serif;
-                                                   font-size: 20px;
-                                                   line-height: 24px;
-                                                   font-weight: 700;
-                                                   font-style: normal;
-                                                   color: #0052bf;
-                                                   text-decoration: none;
-                                                   letter-spacing: 0px;
-                                                   ">
-                                                        <singleline>
-                                                            <div mc:edit Simpli>Име на продукт:</div>
-                                                        </singleline>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td height="5" style="font-size: 5px; line-height: 5px"
-                                                        Simpli>
-                                                        &nbsp;
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="center-text" Simpli align="left"
-                                                        style="
-                                                   font-family: 'Roboto', Arial, Helvetica,
-                                                   sans-serif;
-                                                   font-size: 16px;
-                                                   line-height: 24px;
-                                                   font-weight: 400;
-                                                   font-style: normal;
-                                                   color: #fff;
-                                                   text-decoration: none;
-                                                   letter-spacing: 0px;
-                                                   ">
-                                                        <singleline>
-                                                            <div mc:edit Simpli>
-                                                                {{ $product['name'] }}
-                                                            </div>
-                                                        </singleline>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td height="10" style="font-size: 10px; line-height: 10px"
-                                                        Simpli>
-                                                        &nbsp;
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="center-text" Simpli align="left"
-                                                        style="
-                                                   font-family: 'Roboto', Arial, Helvetica,
-                                                   sans-serif;
-                                                   font-size: 16px;
-                                                   line-height: 24px;
-                                                   font-weight: 400;
-                                                   font-style: normal;
-                                                   color: #fff;
-                                                   text-decoration: none;
-                                                   letter-spacing: 0px;
-                                                   ">
-                                                        <singleline>
-                                                            <div mc:edit Simpli>
-                                                                @if (!empty($product['product_options']))
-                                                                    @foreach ($product['product_options'] as $option)
-                                                                        <div>
-                                                                            <strong>{{ $option['option_name'] }}:</strong>
-                                                                            {{ $option['name'] }}
-                                                                        </div>
-                                                                    @endforeach
-                                                                @else
-                                                                    <span>Няма налични опции</span>
-                                                                @endif
-                                                            </div>
-                                                        </singleline>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="center-text" Simpli align="left"
-                                                        style="
-                                                   font-family: 'Roboto', Arial, Helvetica,
-                                                   sans-serif;
-                                                   font-size: 16px;
-                                                   line-height: 24px;
-                                                   font-weight: 400;
-                                                   font-style: normal;
-                                                   color: #fff;
-                                                   text-decoration: none;
-                                                   letter-spacing: 0px;
-                                                   ">
-                                                        <singleline>
-                                                            <div mc:edit Simpli>
-                                                                <strong>Количество:</strong> {{ $product['quantity'] }}
-                                                            </div>
-                                                        </singleline>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="center-text" Simpli align="left"
-                                                        style="
-                                                   font-family: 'Roboto', Arial, Helvetica,
-                                                   sans-serif;
-                                                   font-size: 16px;
-                                                   line-height: 24px;
-                                                   font-weight: 400;
-                                                   font-style: normal;
-                                                   color: #fff;
-                                                   text-decoration: none;
-                                                   letter-spacing: 0px;
-                                                   ">
-                                                        <singleline>
-                                                            <div mc:edit Simpli>
-                                                                <strong>Цена:</strong> {{ $product['single_price'] }}
-                                                                €
-                                                            </div>
-                                                        </singleline>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                            <!-- column -->
-                                            <!--[if (gte mso 9)|(IE)]>
-                                       </td>
-                                    </tr>
-                                 </table>
-                                 <![endif]-->
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td height="20" style="font-size: 20px; line-height: 20px" Simpli>
-                                            &nbsp;
-                                        </td>
-                                    </tr>
-                                </table>
-                                <!-- content -->
-                            </td>
-                        </tr>
-                        <!-- content-3A -->
-                    @endforeach
-                </table>
-                <table border="0" align="center" cellpadding="0" cellspacing="0" role="presentation"
-                    class="row container-padding25" width="600" style="width: 600px; max-width: 600px" Simpli>
-                    <!-- content-3C -->
+                                @endforeach
+                            </table>
+                        </td>
+                    </tr>
+
+                    @php
+                        $deliveryFee = (float) ($mailData['delivery_fee'] ?? 0);
+                        $total = (float) ($mailData['total'] ?? 0);
+                        $subtotal = max(0, $total - $deliveryFee);
+                    @endphp
+
                     <tr>
-                        <td align="center" Simpli bgcolor="transparent"
-                            style="
-                        border-radius: 0 0 36px 36px;
-                        border-bottom: solid 6px #0052bf;
-                        ">
-                            <!-- content -->
-                            <table border="0" align="center" cellpadding="0" cellspacing="0"
-                                role="presentation" class="row container-padding" width="520"
-                                style="width: 520px; max-width: 520px">
+                        <td class="card mobile-pad" bgcolor="#151515"
+                            style="padding: 4px 44px 42px; border-radius:0 0 18px 18px;">
+                            <table role="presentation" width="100%">
                                 <tr>
-                                    <td height="15"
-                                        style="
-                                 border-bottom: 4px dotted #e4e4e4;
-                                 font-size: 15px;
-                                 line-height: 15px;
-                                 ">
-                                        &nbsp;
-                                    </td>
+                                    <td class="divider" style="padding-top:28px;"></td>
                                 </tr>
+
                                 <tr>
-                                    <td height="30" style="font-size: 30px; line-height: 30px" Simpli>
-                                        &nbsp;
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="center">
-                                        <!--[if (gte mso 9)|(IE)]>
-                                 <table border="0" cellpadding="0" cellspacing="0">
-                                    <tr>
-                                       <td>
-                                          <![endif]-->
-                                        <!-- Content -->
-                                        <table border="0" align="left" cellpadding="0" cellspacing="0"
-                                            role="presentation" width="100%" style="width: 100%; max-width: 100%">
+                                    <td style="padding-top:24px;">
+                                        <table role="presentation" width="100%">
                                             <tr>
-                                                <td>
-                                                    <!--[if (gte mso 9)|(IE)]>
-                                                   <table border="0" cellpadding="0" cellspacing="0">
-                                                      <tr>
-                                                         <td>
-                                                            <![endif]-->
-                                                    <!-- column -->
-                                                    <table border="0" align="left" cellpadding="0"
-                                                        cellspacing="0" role="presentation" class="row"
-                                                        width="240" style="width: 240px; max-width: 240px">
-                                                        <tr>
-                                                            <td class="center-text" Simpli align="left"
-                                                                style="
-                                                                     font-family: 'Roboto', Arial, Helvetica,
-                                                                     sans-serif;
-                                                                     font-size: 20px;
-                                                                     line-height: 24px;
-                                                                     font-weight: 700;
-                                                                     font-style: normal;
-                                                                     color: #fff;
-                                                                     text-decoration: none;
-                                                                     letter-spacing: 0px;
-                                                                     ">
-                                                                <singleline>
-                                                                    <div mc:edit Simpli>Начин на плащане:</div>
-                                                                </singleline>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="center-text" Simpli align="left"
-                                                                style="
-                                                                     font-family: 'Roboto', Arial, Helvetica,
-                                                                     sans-serif;
-                                                                     font-size: 16px;
-                                                                     line-height: 40px;
-                                                                     font-weight: 400;
-                                                                     font-style: normal;
-                                                                     color: #666666;
-                                                                     text-decoration: none;
-                                                                     letter-spacing: 0px;
-                                                                     ">
-                                                                <singleline>
-                                                                    <div mc:edit Simpli>
-                                                                        {{ $mailData['paymentMethod'] }}
-                                                                    </div>
-                                                                </singleline>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                    <!-- column -->
-                                                    <!--[if (gte mso 9)|(IE)]>
-                                                         </td>
-                                                         <td>
-                                                            <![endif]-->
-                                                    <!-- gap -->
-                                                    <table border="0" align="left" cellpadding="0"
-                                                        cellspacing="0" role="presentation" class="row"
-                                                        width="30" style="width: 30px; max-width: 30px">
-                                                        <tr>
-                                                            <td height="30"
-                                                                style="font-size: 30px; line-height: 30px">
-                                                                &nbsp;
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                    <!-- gap -->
-                                                    <!--[if (gte mso 9)|(IE)]>
-                                                         </td>
-                                                         <td>
-                                                            <![endif]-->
-                                                    <!-- column -->
-                                                    <table border="0" align="left" cellpadding="0"
-                                                        cellspacing="0" role="presentation"
-                                                        class="row m-padding-top20" width="250"
-                                                        style="width: 250px; max-width: 250px">
-                                                        <tr>
-                                                            <td align="center">
-                                                                <!-- row -->
-                                                                <table border="0" align="right" cellpadding="0"
-                                                                    cellspacing="0" role="presentation"
-                                                                    class="center-float">
-                                                                    <tr>
-                                                                        <td align="center">
-                                                                            <!--[if (gte mso 9)|(IE)]>
-                                                                              <table border="0" cellpadding="0" cellspacing="0">
-                                                                                 <tr>
-                                                                                    <td>
-                                                                                       <![endif]-->
-                                                                            <!-- column -->
-                                                                            <table border="0" align="left"
-                                                                                cellpadding="0" cellspacing="0"
-                                                                                role="presentation" width="100"
-                                                                                style="width: 100px; max-width: 100px">
-                                                                                <tr>
-                                                                                    <td Simpli align="right"
-                                                                                        style="
-                                                                                                font-family: 'Roboto', Arial,
-                                                                                                Helvetica, sans-serif;
-                                                                                                font-size: 20px;
-                                                                                                line-height: 30px;
-                                                                                                font-weight: 700;
-                                                                                                font-style: normal;
-                                                                                                color: #fff;
-                                                                                                text-decoration: none;
-                                                                                                letter-spacing: 0px;
-                                                                                                ">
-                                                                                        <singleline>
-                                                                                            <div mc:edit Simpli>
-                                                                                                Стойност:
-                                                                                            </div>
-                                                                                        </singleline>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td Simpli align="right"
-                                                                                        style="
-                                                                                                font-family: 'Roboto', Arial,
-                                                                                                Helvetica, sans-serif;
-                                                                                                font-size: 20px;
-                                                                                                line-height: 30px;
-                                                                                                font-weight: 700;
-                                                                                                font-style: normal;
-                                                                                                color: #fff;
-                                                                                                text-decoration: none;
-                                                                                                letter-spacing: 0px;
-                                                                                                ">
-                                                                                        <singleline>
-                                                                                            <div mc:edit Simpli>
-                                                                                                Доставка:
-                                                                                            </div>
-                                                                                        </singleline>
-                                                                                    </td>
-                                                                                </tr>
-                                                                            </table>
-                                                                            <!-- column -->
-                                                                            <!--[if (gte mso 9)|(IE)]>
-                                                                                    </td>
-                                                                                    <td>
-                                                                                       <![endif]-->
-                                                                            <!-- gap -->
-                                                                            <table border="0" align="left"
-                                                                                cellpadding="0" cellspacing="0"
-                                                                                role="presentation" width="20"
-                                                                                style="width: 20px; max-width: 20px">
-                                                                                <tr>
-                                                                                    <td height="20"
-                                                                                        style="
-                                                                                                font-size: 20px;
-                                                                                                line-height: 20px;
-                                                                                                ">
-                                                                                        &nbsp;
-                                                                                    </td>
-                                                                                </tr>
-                                                                            </table>
-                                                                            <!-- gap -->
-                                                                            <!--[if (gte mso 9)|(IE)]>
-                                                                                    </td>
-                                                                                    <td>
-                                                                                       <![endif]-->
-                                                                            <!-- column -->
-                                                                            <table border="0" align="left"
-                                                                                cellpadding="0" cellspacing="0"
-                                                                                role="presentation" width="70"
-                                                                                style="width: 70px; max-width: 70px">
-                                                                                <tr>
-                                                                                    <td Simpli align="left"
-                                                                                        style="
-                                                                                                font-family: 'Roboto', Arial,
-                                                                                                Helvetica, sans-serif;
-                                                                                                font-size: 20px;
-                                                                                                line-height: 30px;
-                                                                                                font-weight: 400;
-                                                                                                font-style: normal;
-                                                                                                color: #fff;
-                                                                                                text-decoration: none;
-                                                                                                letter-spacing: 0px;
-                                                                                                ">
-                                                                                        <singleline>
-                                                                                            <div class="nowrap" mc:edit
-                                                                                                Simpli>
-                                                                                                {{ number_format($mailData['total'] - $mailData['delivery_fee'], 2) }}
-                                                                                                €
-                                                                                            </div>
-                                                                                        </singleline>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td Simpli align="left"
-                                                                                        style="
-                                                                                                font-family: 'Roboto', Arial,
-                                                                                                Helvetica, sans-serif;
-                                                                                                font-size: 20px;
-                                                                                                line-height: 30px;
-                                                                                                font-weight: 400;
-                                                                                                font-style: normal;
-                                                                                                color: #fff;
-                                                                                                text-decoration: none;
-                                                                                                letter-spacing: 0px;
-                                                                                                ">
-                                                                                        <singleline>
-                                                                                            <div class="nowrap" mc:edit
-                                                                                                Simpli>
-                                                                                                {{ number_format($mailData['delivery_fee'], 2) }}
-                                                                                                €
-                                                                                            </div>
-                                                                                        </singleline>
-                                                                                    </td>
-                                                                                </tr>
-                                                                            </table>
-                                                                            <!-- column -->
-                                                                            <!--[if (gte mso 9)|(IE)]>
-                                                                                    </td>
-                                                                                 </tr>
-                                                                              </table>
-                                                                              <![endif]-->
-                                                                        </td>
-                                                                    </tr>
-                                                                </table>
-                                                                <!-- row -->
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                    <!-- column -->
-                                                    <!--[if (gte mso 9)|(IE)]>
-                                                         </td>
-                                                      </tr>
-                                                   </table>
-                                                   <![endif]-->
+                                                <td style="padding:5px 0;font-size:15px;line-height:22px;
+                                                    color:#a7a7a7;">
+                                                    Стойност на продуктите
+                                                </td>
+                                                <td align="right"
+                                                    style="padding:5px 0;font-size:15px;line-height:22px;
+                                                    color:#ffffff;">
+                                                    {{ number_format($subtotal, 2) }} €
                                                 </td>
                                             </tr>
+
                                             <tr>
-                                                <td height="20" style="font-size: 20px; line-height: 20px">
-                                                    &nbsp;
+                                                <td style="padding:5px 0;font-size:15px;line-height:22px;
+                                                    color:#a7a7a7;">
+                                                    Доставка
+                                                </td>
+                                                <td align="right"
+                                                    style="padding:5px 0;font-size:15px;line-height:22px;
+                                                    color:#ffffff;">
+                                                    {{ number_format($deliveryFee, 2) }} €
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td style="padding:18px 0 0;font-size:20px;line-height:28px;
+                                                    font-weight:bold;color:#ffffff;border-top:1px solid #333333;">
+                                                    Общо за плащане
+                                                </td>
+                                                <td align="right"
+                                                    style="padding:18px 0 0;font-size:24px;line-height:30px;
+                                                    font-weight:bold;color:#ffffff;border-top:1px solid #333333;">
+                                                    {{ number_format($total, 2) }} €
                                                 </td>
                                             </tr>
                                         </table>
-                                        <!-- Content -->
-                                        <!--[if (gte mso 9)|(IE)]>
-                                       </td>
-                                    </tr>
-                                 </table>
-                                 <![endif]-->
                                     </td>
                                 </tr>
+
                                 <tr>
-                                    <td align="center">
-                                        <!-- Order number -->
-                                        <table border="0" align="center" cellpadding="0" cellspacing="0"
-                                            role="presentation" class="row" width="520"
-                                            style="width: 520px; max-width: 520px">
+                                    <td align="center"
+                                        style="padding-top:34px;font-size:14px;line-height:23px;color:#a7a7a7;">
+                                        Ще се свържем с теб при необходимост от допълнително уточнение.<br>
+                                        Благодарим, че избра Dark Society.
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td align="center" style="padding-top:26px;">
+                                        <table role="presentation" cellspacing="0" cellpadding="0">
                                             <tr>
-                                                <td align="center" height="80"
-                                                    style="
-                                          font-family: 'Roboto', Arial, Helvetica,
-                                          sans-serif;
-                                          font-size: 24px;
-                                          line-height: 32px;
-                                          font-weight: 700;
-                                          font-style: normal;
-                                          color: #ffffff;
-                                          text-decoration: none;
-                                          letter-spacing: 0px;
-                                          height: 80px;
-                                          border-radius: 80px;
-                                          "
-                                                    bgcolor="#0052bf">
-                                                    <singleline>
-                                                        <div mc:edit Simpli>
-                                                            Общо за плащане: <br> {{ $mailData['total'] }} €
-                                                        </div>
-                                                    </singleline>
+                                                <td bgcolor="#ffffff" style="border-radius:8px;">
+                                                    <a href="{{ config('app.url') }}" target="_blank"
+                                                        style="display:inline-block;padding:14px 28px;
+                                                        font-size:14px;line-height:20px;font-weight:bold;
+                                                        color:#000000;text-decoration:none;">
+                                                        КЪМ DARK SOCIETY
+                                                    </a>
                                                 </td>
                                             </tr>
                                         </table>
-                                        <!-- Order number -->
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td height="20" style="font-size: 20px; line-height: 20px" Simpli>
-                                        &nbsp;
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td height="15"
-                                        style="
-                                 border-bottom: 4px dotted #e4e4e4;
-                                 font-size: 15px;
-                                 line-height: 15px;
-                                 ">
-                                        &nbsp;
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td height="20" style="font-size: 20px; line-height: 20px" Simpli>
-                                        &nbsp;
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="center">
-                                        <!-- Paragraphs -->
-                                        <table border="0" cellspacing="0" cellpadding="0" role="presentation"
-                                            align="center" class="row" width="480"
-                                            style="width: 480px; max-width: 480px">
-                                            <tr>
-                                                <td class="center-text" Simpli align="center"
-                                                    style="
-                                          font-family: 'Roboto', Arial, Helvetica,
-                                          sans-serif;
-                                          font-size: 14px;
-                                          line-height: 26px;
-                                          font-weight: 400;
-                                          font-style: italic;
-                                          color: #fff;
-                                          text-decoration: none;
-                                          letter-spacing: 0px;
-                                          ">
-                                                    <singleline>
-                                                        <div mc:edit Simpli>
-                                                            Вашата поръчка ще бъде обработена в рамките на 24 часа и ще
-                                                            бъде <br />
-                                                            подготвена за получаване от място или изпратена до адреса за
-                                                            <br />
-                                                            доставка. <br /> В случай, че
-                                                            имате въпроси, моля не се колебайте да се свържете се с нас
-                                                            !<br />
-                                                        </div>
-                                                    </singleline>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                        <!-- Paragraphs -->
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td height="20" style="font-size: 20px; line-height: 20px" Simpli>
-                                        &nbsp;
-                                    </td>
-                                </tr>
-                                <!-- <tr>
-                              <td align="center"> -->
-                                <!-- Button -->
-                                <!-- <table border="0" cellspacing="0" cellpadding="0" role="presentation" align="center" class="center-float">
-                              <tr>
-                                  <td align="center" Simpli bgcolor="#ff7775" style="border-radius: 6px"> -->
-                                <!--[if (gte mso 9)|(IE)]>
-                           <table border="0" cellpadding="0" cellspacing="0" align="center">
-                              <tr>
-                                 <td align="center" width="35"></td>
-                                 <td align="center" height="50" style="height:50px;">
-                                    <![endif]-->
-                                <!-- <singleline>
-                                       <a href="#" target="_blank" mc:edit style="
-                                       font-family: 'Roboto', Arial, Helvetica,
-                                       sans-serif;
-                                       font-size: 16px;
-                                       line-height: 20px;
-                                       font-weight: 700;
-                                       font-style: normal;
-                                       color: #ffffff;
-                                       text-decoration: none;
-                                       letter-spacing: 0px;
-                                       padding: 15px 35px 15px 35px;
-                                       display: inline-block;
-                                       "><span>Покажи поръчката</span></a>
-                                       </singleline> -->
-                                <!--[if (gte mso 9)|(IE)]>
-                                 </td>
-                                 <td align="center" width="35"></td>
-                              </tr>
-                           </table>
-                           <![endif]-->
-                                <!-- </td>
-                              </tr>
-                              </table> -->
-                                <!-- Buttons -->
-                                <!-- </td>
-                              </tr> -->
-                                <tr>
-                                    <td height="30" style="font-size: 30px; line-height: 30px" Simpli>
-                                        &nbsp;
                                     </td>
                                 </tr>
                             </table>
-                            <!-- content -->
                         </td>
                     </tr>
-                    <!-- content-3C -->
-                </table>
-                <table border="0" align="center" cellpadding="0" cellspacing="0" role="presentation"
-                    width="100%" style="width: 100%; max-width: 100%" Simpli>
-                    <!-- simpli-footer -->
+
                     <tr>
-                        <td align="center">
-                            <!-- Content -->
-                            <table border="0" align="center" cellpadding="0" cellspacing="0"
-                                role="presentation" class="row container-padding" width="520"
-                                style="width: 520px; max-width: 520px">
-                                <tr>
-                                    <td height="40" style="font-size: 40px; line-height: 40px" Simpli>
-                                        &nbsp;
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="center">
-                                        <table border="0" align="center" cellpadding="0" cellspacing="0"
-                                            role="presentation" class="row" width="480"
-                                            style="width: 480px; max-width: 480px">
-                                            <tr>
-                                                <td class="center-text" Simpli align="center"
-                                                    style="
-                                          font-family: 'Roboto', Arial, Helvetica,
-                                          sans-serif;
-                                          font-size: 14px;
-                                          line-height: 24px;
-                                          font-weight: 480;
-                                          font-style: normal;
-                                          color: #666666;
-                                          text-decoration: none;
-                                          letter-spacing: 0px;
-                                          ">
-                                                    <multiline>
-                                                        <div mc:edit Simpli>
-                                                            <a href="https://yoloony.com/" target="_blank"
-                                                                style="font-weight: bold">Yoloony</a>
-                                                            © 2025<br />
-                                                        </div>
-                                                    </multiline>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td height="30" style="font-size: 30px; line-height: 30px" Simpli>
-                                        &nbsp;
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td height="50" style="font-size: 50px; line-height: 50px" Simpli>
-                                        &nbsp;
-                                    </td>
-                                </tr>
-                            </table>
-                            <!-- Content -->
+                        <td align="center"
+                            style="padding:26px 18px 0;font-size:12px;line-height:20px;color:#707070;">
+                            <a href="{{ config('app.url') }}" target="_blank"
+                                style="color:#a7a7a7;font-weight:bold;">
+                                Dark Society
+                            </a>
+                            © {{ date('Y') }}
                         </td>
                     </tr>
-                    <!-- simpli-footer -->
+
                 </table>
             </td>
         </tr>
-        <!-- Outer-Table -->
     </table>
 </body>
-
 </html>

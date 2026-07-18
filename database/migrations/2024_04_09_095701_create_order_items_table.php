@@ -17,8 +17,6 @@ return new class extends Migration
 
             $table->foreignId('order_id')->constrained()->onDelete('cascade');
             $table->foreignId('product_id')->nullable()->constrained()->onDelete('cascade');
-            $table->foreignId('subscription_id')->nullable()->constrained()->onDelete('cascade');
-            $table->text('subscription_data')->nullable();
             $table->string('name')->nullable();
             $table->integer('quantity')->default(1);
             $table->decimal('price', 10, 2);

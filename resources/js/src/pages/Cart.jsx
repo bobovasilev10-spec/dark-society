@@ -34,7 +34,6 @@ export default function Cart() {
         econt_office: "",
         order_confirm: true,
         payment_method: "at_delivery",
-        subscription_data: [],
     });
     const [deliveryFee, setDeliveryFee] = useState(0);
 
@@ -137,23 +136,6 @@ export default function Cart() {
         }));
     };
 
-    const itemsWithAdditionalData = cart?.cart_items?.filter(
-        (el) => el.subscription && el.subscription.subscription_data?.length > 0
-    );
-    const handleSubscriptionDataChange = (e, itemId) => {
-        const { name, value } = e.target;
-
-        setFormData((prevFormData) => ({
-            ...prevFormData,
-            subscription_data: {
-                ...prevFormData.subscription_data,
-                [itemId]: {
-                    ...prevFormData.subscription_data?.[itemId], // Keep existing values
-                    [name]: value, // Update the changed field
-                },
-            },
-        }));
-    };
     if (!cart?.cart_items) {
         return <Loader />;
     }
@@ -209,9 +191,7 @@ export default function Cart() {
 
                             <div className="space-y-5">
                                 {cart?.cart_items?.map((item, i) => {
-                                    const product = item.product
-                                        ? item.product
-                                        : item.subscription;
+                                    const product = item.product;
 
                                     const additionalMedia =
                                         product?.images
@@ -536,50 +516,7 @@ export default function Cart() {
                                 </section>
                             )}
 
-                            {itemsWithAdditionalData?.length > 0 && (
-                                <section>
-                                    <h3 className="mb-5 text-xs font-bold uppercase tracking-[0.16em] text-white/45">
-                                        {t("Допълнителна информация за абонамент")}
-                                    </h3>
-
-                                    <div className="space-y-8">
-                                        {itemsWithAdditionalData.map((item, i) => (
-                                            <div key={i}>
-                                                <div className="mb-4 flex items-center gap-3">
-                                                    <span className="text-[10px] uppercase tracking-[0.15em] text-white/35">
-                                                        {t("Абонамент")}
-                                                    </span>
-                                                    <h4 className="text-sm text-white/70">
-                                                        {item?.subscription.name?.[language]}
-                                                    </h4>
-                                                </div>
-
-                                                <div className="grid gap-5 md:grid-cols-2">
-                                                    {item?.subscription?.subscription_data_with_labels?.map(
-                                                        (dataItem, index) => (
-                                                            <input
-                                                                type="text"
-                                                                key={index}
-                                                                name={dataItem.key}
-                                                                placeholder={t(dataItem.label)}
-                                                                value={
-                                                                    formData.subscription_data?.[item.id]?.[
-                                                                        dataItem.key
-                                                                    ] || ""
-                                                                }
-                                                                onChange={(e) =>
-                                                                    handleSubscriptionDataChange(e, item.id)
-                                                                }
-                                                                className="w-full border-0 border-b border-white/20 bg-transparent px-0 py-4 text-sm text-white outline-none placeholder:text-white/25 focus:border-white focus:ring-0"
-                                                            />
-                                                        )
-                                                    )}
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </section>
-                            )}
+                            
 
                             <section>
                                 <h3 className="mb-5 text-xs font-bold uppercase tracking-[0.16em] text-white/45">

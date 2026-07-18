@@ -441,7 +441,6 @@ class OrderResource extends Resource
         return [
             // ProductsRelationManager::class,
             \App\Filament\Resources\OrderResource\RelationManagers\ProductsRelationManager::class,
-            \App\Filament\Resources\OrderResource\RelationManagers\SubscriptionRelationManager::class,
         ];
     }
 

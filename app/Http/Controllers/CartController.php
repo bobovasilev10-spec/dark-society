@@ -21,14 +21,6 @@ class CartController extends Controller
         ]);
     }
 
-    // public function addToCart(Request $request)
-    // {
-    //     $request->validate([
-    //         'product_id' => 'nullable|integer',
-    //         'subscription_id' => 'nullable|integer',
-    //         'quantity' => 'required|integer|min:1',
-    //         'option_id' => 'nullable|integer',
-    //     ]);
 
     //     $product = Product::query()
     //         ->where('id', $request->product_id)
@@ -60,23 +52,19 @@ class CartController extends Controller
     {
         $request->validate([
             'product_id' => 'nullable|integer',
-            'subscription_id' => 'nullable|integer',
             'quantity' => 'required|integer|min:1',
             'option_id' => 'nullable|integer',
         ]);
 
         $cart = new CartService();
 
-        if ($request->product_id) {
-            $options = $this->getOptions($request->product_id, $request->option_id);
-            $cart->addToCart($request->product_id, $request->quantity, $options, 'product');
-        } elseif ($request->subscription_id) {
-            $cart->addToCart($request->subscription_id, $request->quantity, [], 'subscription');
-        } else {
-            return response()->json([
-                'message' => 'Invalid request. Either product_id or subscription_id is required.',
-            ], 400);
-        }
+        $options = $this->getOptions($request->product_id, $request->option_id);
+
+        $cart->addToCart(
+            $request->product_id,
+            $request->quantity,
+            $options
+        );
 
         return response()->json([
             'success' => true,

@@ -14,12 +14,9 @@ class OrderItem extends Model
         'quantity',
         'price',
         'product_options',
-        'subscription_id',
-        'subscription_data',
     ];
     protected $casts = [
         'product_options' => 'array',
-        'subscription_data' => 'array',
     ];
 
     protected $appends = ['options'];
@@ -88,10 +85,6 @@ class OrderItem extends Model
     public function product()
     {
         return $this->belongsTo(Product::class);
-    }
-    public function subscription()
-    {
-        return $this->belongsTo(Subscription::class);
     }
 
     public function getOptionsAttribute()

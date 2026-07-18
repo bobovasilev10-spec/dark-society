@@ -21,24 +21,6 @@ export const contactRequest = async (requestData) => {
     }
 };
 
-export const campRequest = async (requestData) => {
-    const csrfToken = getCsrfToken();
-    try {
-        const response = await fetch(`${baseUrl}/camp`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "X-CSRF-TOKEN": csrfToken,
-            },
-            body: JSON.stringify(requestData),
-        });
-
-        const result = await response.json();
-        return result;
-    } catch (error) {
-        throw error;
-    }
-};
 
 export const setLocale = async (language) => {
     const csrfToken = getCsrfToken();
@@ -67,24 +49,7 @@ export const getBaseData = async () => {
         throw error;
     }
 };
-export const getClientsData = async () => {
-    try {
-        const response = await fetch(`${baseUrl}/clients_json`);
-        const result = await response.json();
-        return result;
-    } catch (error) {
-        throw error;
-    }
-};
-export const getMedicalData = async () => {
-    try {
-        const response = await fetch(`${baseUrl}/medical_json`);
-        const result = await response.json();
-        return result;
-    } catch (error) {
-        throw error;
-    }
-};
+
 export const getBInfoPage = async (slug) => {
     try {
         const response = await fetch(`${baseUrl}/info_page_json/${slug}`);
