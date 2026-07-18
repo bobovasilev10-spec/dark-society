@@ -1,0 +1,14 @@
+@import './reset.css';
+@import './variables.css';
+@import './typography.css';
+@import './global.css';
+@import './navbar.css';
+@import './buttons.css';
+@import './hero.css';
+@import './cards.css';
+@import './product.css';
+@import './cart.css';
+@import './footer.css';
+@import './animations.css';
+@import './responsive.css';
+.shop-input,.shop-form input,.shop-form textarea,.shop-form select{width:100%;background:#111;border:1px solid #333;color:#fff;padding:14px;margin-top:8px}.shop-form{display:grid;gap:18px}.shop-form label{text-transform:uppercase;font-size:12px;letter-spacing:.12em}.narrow{max-width:760px}.cart-list{display:grid;gap:16px}.cart-row{display:grid;grid-template-columns:100px 1fr auto auto;gap:20px;align-items:center;border-bottom:1px solid #292929;padding:20px 0}.cart-row img{width:100px;height:120px;object-fit:cover}.cart-summary{display:flex;justify-content:flex-end;align-items:center;gap:30px;margin-top:30px}.form-error{padding:14px;border:1px solid #b32;color:#f88}@media(max-width:700px){.cart-row{grid-template-columns:75px 1fr}.cart-row img{width:75px;height:90px}.cart-row .qty,.cart-row>.btn{grid-column:2}.cart-summary{display:block}}

@@ -1,0 +1,14 @@
+@import "/vendor/filament/filament/resources/css/theme.css";
+
+@config './tailwind.config.js';
+
+.fi-body {
+    background: linear-gradient(#000000b3, #000000b3), url('../../../../public/images/za_saita_back.webp') no-repeat center center fixed;
+    background-size: cover;
+}
+.fi-dropdown-list:has(.fi-theme-switcher) {
+    display: none;
+}
+.fi-dropdown-panel{
+    max-width: 200px;
+}

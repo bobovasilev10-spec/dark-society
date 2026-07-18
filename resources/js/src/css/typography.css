@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+body {
+    font-family:var(--font-body);
+    background:var(--bg);
+    color:var(--text);
+    letter-spacing:.01em
+}
+
+h1,h2,h3,.display {
+    font-family:var(--font-head);
+    font-weight:400;
+    letter-spacing:.035em;
+    text-transform:uppercase;
+    margin:0
+}
+
+.display {
+    font-size:clamp(5rem,16vw,16rem);
+    line-height:.78
+}
+
+h1 {
+    font-size:clamp(4rem,12vw,12rem);
+    line-height:.82
+}
+
+h2 {
+    font-size:clamp(3.2rem,8vw,8rem);
+    line-height:.85
+}
+
+h3 {
+    font-size:clamp(2rem,4vw,4rem);
+    line-height:.9
+}
+
+p {
+    color:var(--muted);
+    line-height:1.7
+}
+
+.kicker {
+    font-size:.75rem;
+    letter-spacing:.28em;
+    color:var(--accent2);
+    text-transform:uppercase;
+    font-weight:700
+}
+
+.kicker-index {
+    font-size:.75rem;
+    letter-spacing:.28em;
+    color:black;
+    text-transform:uppercase;
+    font-weight:700
+}
+
+.lead {
+    font-size:clamp(1.05rem,2vw,1.45rem);
+    color:#ddd;
+    max-width:760px
+}

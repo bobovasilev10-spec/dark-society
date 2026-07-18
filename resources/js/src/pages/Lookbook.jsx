@@ -1,0 +1,1 @@
+export default function Lookbook(){return <section className="page-pad section"><div className="container"><div className="kicker">Visual archive</div><h1>Lookbook</h1><div className="gallery lookbook-page">{[0,1,2,3,4,5].map(n=><img key={n} src={`/images/lookbook/lookbook-${n}.png`} alt={`Dark Society look ${n+1}`}/>)}</div></div></section>}

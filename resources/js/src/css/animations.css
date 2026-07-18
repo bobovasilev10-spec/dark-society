@@ -1,0 +1,52 @@
+.loader {
+    position:fixed;
+    inset:0;
+    z-index:10000;
+    background:#050505;
+    display:grid;
+    place-items:center;
+    transition:opacity .7s var(--ease),visibility .7s
+}
+
+.loader.hide {
+    opacity:0;
+    visibility:hidden
+}
+
+.loader-logo {
+    font-family:var(--font-head);
+    font-size:8rem;
+    letter-spacing:.08em;
+    animation:pulse 1.25s infinite alternate
+}
+
+@keyframes pulse {
+    from {
+        opacity:.25;
+        filter:blur(3px)
+    }
+
+    to {
+        opacity:1;
+        filter:blur(0)
+    }
+}
+
+.cursor {
+    position:fixed;
+    width:24px;
+    height:24px;
+    border:1px solid rgba(255,255,255,.65);
+    border-radius:50%;
+    pointer-events:none;
+    z-index:10001;
+    transform:translate(-50%,-50%);
+    transition:width .2s,height .2s,background .2s,border .2s
+}
+
+.cursor.hover {
+    width:62px;
+    height:62px;
+    background:rgba(141,15,24,.25);
+    border-color:var(--accent2)
+}

@@ -1,0 +1,88 @@
+[
+    {
+        "id": "void-hoodie",
+        "name": "VOID Heavy Hoodie",
+        "price": 69,
+        "category": "hoodies",
+        "color": "Black / Blood",
+        "badge": "DROP 001",
+        "video": "",
+        "images": [
+            "images/products/product1/prednica.png",
+            "images/products/product1/gryb.png"
+        ],
+        "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL"
+        ],
+        "description": "Heavyweight oversized hoodie with aggressive street silhouette, brushed fleece and drop shoulder fit.",
+        "materials": "460gsm cotton blend, ribbed cuffs, oversized hood.",
+        "stock": 12
+    },
+    {
+        "id": "ds-tee",
+        "name": "DS Oversized Tee",
+        "price": 39,
+        "category": "t-shirts",
+        "color": "Black",
+        "badge": "DROP 001",
+        "video": "videos/products/2.mp4",
+        "images": [
+            "images/products/product2/prednica.png",
+            "images/products/product2/gryb.png"
+        ],
+        "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "XXL"
+        ],
+        "description": "Boxy oversized tee with Dark Society front mark and heavy print feel.",
+        "materials": "240gsm cotton, screen print ready finish.",
+        "stock": 18
+    },
+    {
+        "id": "rebellion-cargo",
+        "name": "Rebellion Cargo Pants",
+        "price": 79,
+        "category": "pants",
+        "color": "Washed Black",
+        "badge": "DROP 001",
+        "video": "videos/products/3.mp4",
+        "images": [
+            "images/products/product3/prednica.png",
+            "images/products/product3/gryb.png"
+        ],
+        "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL"
+        ],
+        "description": "Wide cargo pants with raw utilitarian energy, built for night streets.",
+        "materials": "Heavy twill cotton, utility pockets, relaxed fit.",
+        "stock": 7
+    },
+    {
+        "id": "chain-accessory",
+        "name": "Society Chain Accessory",
+        "price": 29,
+        "category": "accessories",
+        "color": "Gunmetal",
+        "badge": "DROP 001",
+        "video": "videos/products/4.mp4",
+        "images": [
+            "images/products/product4/prednica.png",
+            "images/products/product4/gryb.png"
+        ],
+        "sizes": [
+            "OS"
+        ],
+        "description": "Dark metal accessory detail for full lookbook styling.",
+        "materials": "Metal alloy, matte finish.",
+        "stock": 22
+    }
+]

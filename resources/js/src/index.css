@@ -1,0 +1,241 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --primary-color: #061738 !important;
+    --secondary-color: #a90000 !important;
+    --yellow-color: #ffc107;
+    --text-gray-color: #606060;
+    --white-color: #ffffff;
+    --ofwhite-color: #f2f2f2;
+    --black-color: #000000;
+    --light-color: #fcfcfc;
+    --light-color2: #aaaaaa;
+    --dark-color: #242424;
+    --sky-color: #647589;
+    --border-color: #e7e7e7;
+    --border-color2: #e4e4e4;
+    --border-color3: #dddddd;
+    --border-dark: #383434;
+    --bg-gray-color: #fcfcfc;
+    --gray-color: #fafbfe;
+    --gray-color2: #f5f5f5;
+    --font-jost: "Jost", sans-serif;
+    --body-font-size: 1.6rem;
+    --body-font-weight: 400;
+    --body-line-height: 2.8rem;
+    --headings-weight: 600;
+    --transition: all 0.3s ease 0s;
+    --container-fluid-offset: 19rem;
+    --toastify-color-progress-success: #C13584 !important;
+    --toastify-icon-color-success: #C13584 !important;
+}
+.Toastify__toast-theme--light {
+    background: #000000 !important;
+    color: #ffffff !important;
+}
+.Toastify__close-button--light {
+    color: #ffffff !important;
+}
+/* Common Style */
+*,
+*::after,
+*::before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    min-height: 100%;
+    margin: 0 !important;
+    font-size: 16px;
+    font-family: "Jost", sans-serif !important;
+    padding: 0;
+    background-color: #000000;
+
+}
+.font-jost {
+    font-family: "Jost", sans-serif !important;
+}
+main {
+    min-height: 80vh;
+    background-color: #000000;
+}
+body {
+    font-family: var(--font-jost);
+    font-size: var(--body-font-size, 1.6rem);
+    font-weight: var(--body-font-weight);
+    font-style: normal;
+    line-height: var(--body-line-height, 25px);
+    position: relative;
+    visibility: visible;
+    overflow-x: hidden;
+}
+.mobile_offcanvas {
+    font-family: var(--font-jost);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: var(--headings-weight);
+    margin: 0;
+}
+
+h1,
+.h1 {
+    font-size: 2.3rem;
+    line-height: 3rem;
+}
+p {
+    font-size: 16px;
+}
+.Toastify__toast-body {
+    font-size: 16px;
+    font-family: var(--font-jost);
+}
+
+.section-padding {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+.section-padding a {
+    color: var(--yellow-color);
+    font-size: 24px;
+    font-weight: 800;
+}
+
+/* Основни стилове за скролбара */
+::-webkit-scrollbar {
+    width: 12px; /* Ширина на скролбара */
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a; /* Много тъмно сиво за фона */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #0e1e18; /* Тъмно зелено за thumb */
+    border-radius: 20px; /* Заоблени ъгли на thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #248269; /* По-светъл нюанс на зелено при hover */
+}
+
+/* За Firefox */
+* {
+    scrollbar-width: thin; /* Тънък скролбар */
+    scrollbar-color: #6f6f6f #1a1a1a; /* Цветове за thumb и фона */
+}
+
+/* Cart checkboxes */
+
+.peer:checked ~ .group .peer-checked\:group\:bg-indigo-600 {
+    background-color: #c13584;
+    border: none;
+}
+
+.peer:checked ~ .group .peer-checked\:group\:visible {
+    display: block;
+}
+.selected {
+    background-color: #c13584;
+    border: none;
+}
+
+.selected.visible {
+    display: block;
+}
+.bg-blur {
+    background: #ffffff08;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+.bg-dark-blur {
+    background: #00000008;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    -webkit-text-fill-color: white;
+    -webkit-box-shadow: 0 0 0px 1000px black inset;
+    -webkit-transition: background-color 5000sease-in-out 0s;
+    transition: background-color 5000sease-in-out 0s;
+}
+.bg-back {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url("/images/za_saita_back.webp") no-repeat center center fixed;
+    background-size: cover;
+    min-height: 80vh;
+}
+.before-after-slider img {
+    max-height: 700px;
+    width: auto;
+    object-fit: cover;
+}
+.description p,
+.description h2,
+.description h3,
+.description h4,
+.description h5 {
+    font-size: 18px;
+    color: #fff;
+    font-weight: 400;
+    line-height: 2;
+    text-align: start;
+}
+
+.background_img {
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.7)
+    ),
+    url('/images/za_saita_back.webp') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.before-after-slider__first-photo-container,
+.before-after-slider__second-photo-container, 
+.before-after-slider__first-photo-container img,
+.before-after-slider__second-photo-container img {
+    height: 100%;
+}
+
+@layer base {
+    input[type='number']::-webkit-inner-spin-button,
+    input[type='number']::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  
+    input[type='number'] {
+      -moz-appearance: textfield;
+    }
+  }
+  
+/* Dark Society redesign */
+body { background:#080808 !important; color:#fff; }
+main { background:#080808 !important; }
+button, input, textarea, select { font: inherit; }
+::selection { background:#fff; color:#000; }
+::-webkit-scrollbar-thumb { background:#5b5b5b; }
