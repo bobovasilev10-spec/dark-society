@@ -78,8 +78,6 @@ Route::post('/changeLocale', [BaseController::class, 'changeLocale']);
 // Contact us
 Route::post('/contact-us', [ContactUsController::class, 'store'])->name('contact-us.store');
 
-// Camp
-
 Route::get('/{any}', [BaseController::class, 'index'])->where('any', '.*')->name('home');
 
 require __DIR__ . '/auth.php';
