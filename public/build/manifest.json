@@ -1,20 +1,20 @@
 {
-  "_CountdownTimer-BdQmHwVw.js": {
-    "file": "assets/CountdownTimer-BdQmHwVw.js",
+  "_CountdownTimer-BiBRCTeB.js": {
+    "file": "assets/CountdownTimer-BiBRCTeB.js",
     "name": "CountdownTimer",
     "imports": [
       "resources/js/src/index.jsx"
     ]
   },
-  "_Loader-CTT2D1IW.js": {
-    "file": "assets/Loader-CTT2D1IW.js",
+  "_Loader-BEFs1g7M.js": {
+    "file": "assets/Loader-BEFs1g7M.js",
     "name": "Loader",
     "imports": [
       "resources/js/src/index.jsx"
     ]
   },
-  "_dialog.esm-BGh5WvRX.js": {
-    "file": "assets/dialog.esm-BGh5WvRX.js",
+  "_dialog.esm-CBMBkwRB.js": {
+    "file": "assets/dialog.esm-CBMBkwRB.js",
     "name": "dialog.esm",
     "imports": [
       "resources/js/src/index.jsx"
@@ -51,7 +51,7 @@
     "isEntry": true
   },
   "resources/js/src/index.jsx": {
-    "file": "assets/index-BUBU2l5J.js",
+    "file": "assets/index-C6oaP-ra.js",
     "name": "index",
     "src": "resources/js/src/index.jsx",
     "isEntry": true,
@@ -76,7 +76,7 @@
     ]
   },
   "resources/js/src/pages/About.jsx": {
-    "file": "assets/About-RBvD_wVZ.js",
+    "file": "assets/About-Be6CPYrN.js",
     "name": "About",
     "src": "resources/js/src/pages/About.jsx",
     "isDynamicEntry": true,
@@ -88,17 +88,17 @@
     ]
   },
   "resources/js/src/pages/Cart.jsx": {
-    "file": "assets/Cart-DPgCQOQL.js",
+    "file": "assets/Cart-Co7d8joy.js",
     "name": "Cart",
     "src": "resources/js/src/pages/Cart.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/src/index.jsx",
-      "_Loader-CTT2D1IW.js"
+      "_Loader-BEFs1g7M.js"
     ]
   },
   "resources/js/src/pages/CookiePolicy/CookiePolicy.jsx": {
-    "file": "assets/CookiePolicy-H4zotpSE.js",
+    "file": "assets/CookiePolicy-COmytzQx.js",
     "name": "CookiePolicy",
     "src": "resources/js/src/pages/CookiePolicy/CookiePolicy.jsx",
     "isDynamicEntry": true,
@@ -107,30 +107,30 @@
     ]
   },
   "resources/js/src/pages/Home/Home.jsx": {
-    "file": "assets/Home-CAxCdW7d.js",
+    "file": "assets/Home-Bipnqb8V.js",
     "name": "Home",
     "src": "resources/js/src/pages/Home/Home.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/src/index.jsx",
-      "_dialog.esm-BGh5WvRX.js"
+      "_dialog.esm-CBMBkwRB.js"
     ],
     "css": [
       "assets/Home-B_eKu10D.css"
     ]
   },
   "resources/js/src/pages/OrderConfirmation.jsx": {
-    "file": "assets/OrderConfirmation-B1FasgTr.js",
+    "file": "assets/OrderConfirmation-DZzFlNz8.js",
     "name": "OrderConfirmation",
     "src": "resources/js/src/pages/OrderConfirmation.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/src/index.jsx",
-      "_Loader-CTT2D1IW.js"
+      "_Loader-BEFs1g7M.js"
     ]
   },
   "resources/js/src/pages/PrivacyPolicy/PrivacyPolicy.jsx": {
-    "file": "assets/PrivacyPolicy-KpruJRyq.js",
+    "file": "assets/PrivacyPolicy-CLqKg9eg.js",
     "name": "PrivacyPolicy",
     "src": "resources/js/src/pages/PrivacyPolicy/PrivacyPolicy.jsx",
     "isDynamicEntry": true,
@@ -139,33 +139,33 @@
     ]
   },
   "resources/js/src/pages/ProductDetails/ProductDetailsPage.jsx": {
-    "file": "assets/ProductDetailsPage-BJi1JxOo.js",
+    "file": "assets/ProductDetailsPage-BJ4Yyt8d.js",
     "name": "ProductDetailsPage",
     "src": "resources/js/src/pages/ProductDetails/ProductDetailsPage.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/src/index.jsx",
-      "_Loader-CTT2D1IW.js",
-      "_CountdownTimer-BdQmHwVw.js"
+      "_Loader-BEFs1g7M.js",
+      "_CountdownTimer-BiBRCTeB.js"
     ]
   },
   "resources/js/src/pages/Products/Products.jsx": {
-    "file": "assets/Products-BItzaJtA.js",
+    "file": "assets/Products-n4L0_qmg.js",
     "name": "Products",
     "src": "resources/js/src/pages/Products/Products.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/src/index.jsx",
-      "_dialog.esm-BGh5WvRX.js",
-      "_CountdownTimer-BdQmHwVw.js",
-      "_Loader-CTT2D1IW.js"
+      "_dialog.esm-CBMBkwRB.js",
+      "_CountdownTimer-BiBRCTeB.js",
+      "_Loader-BEFs1g7M.js"
     ],
     "css": [
       "assets/Products-mYz_zmOI.css"
     ]
   },
   "resources/js/src/pages/Terms/Terms.jsx": {
-    "file": "assets/Terms-F_4zEMJw.js",
+    "file": "assets/Terms-BfCyAAL2.js",
     "name": "Terms",
     "src": "resources/js/src/pages/Terms/Terms.jsx",
     "isDynamicEntry": true,
