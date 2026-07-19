@@ -10,4 +10,42 @@
 .ds-category-grid{display:grid;grid-template-columns:1.35fr 1fr 1fr;gap:16px}.ds-category-card{position:relative;min-height:560px;overflow:hidden;background:#141414;color:#fff;text-decoration:none}.ds-category-image{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .7s ease,filter .5s ease;filter:grayscale(1)}.ds-category-image-one{background-image:linear-gradient(rgba(0,0,0,.08),rgba(0,0,0,.4)),url('/images/teniski.webp')}.ds-category-image-two{background-image:linear-gradient(rgba(0,0,0,.08),rgba(0,0,0,.45)),url('/images/hoodie.webp')}.ds-category-image-three{background-image:linear-gradient(rgba(0,0,0,.08),rgba(0,0,0,.45)),url('/images/aksesoari.webp')}.ds-category-card:hover .ds-category-image{transform:scale(1.045);filter:grayscale(.2)}.ds-category-copy{position:absolute;left:28px;right:28px;bottom:26px;display:flex;justify-content:space-between;align-items:end}.ds-category-copy span{font-size:clamp(25px,3vw,44px);font-weight:800;text-transform:uppercase}.ds-category-copy small{font-size:10px;letter-spacing:.16em;text-transform:uppercase}
 .ds-story{display:grid;grid-template-columns:1.1fr .9fr;min-height:730px;background:#111}.ds-story-media{min-height:620px;background:linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,.45)),url('/images/logo2.webp') center/cover no-repeat;filter:grayscale(1)}.ds-story-content{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:clamp(45px,7vw,110px)}.ds-story-content>p:not(.ds-eyebrow){max-width:590px;margin:30px 0;color:#aaa;line-height:1.8}.ds-benefits{width:min(1440px,calc(100% - 48px));margin:0 auto;padding:70px 0;display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid #222}.ds-benefits article{display:flex;align-items:center;justify-content:center;gap:18px;padding:20px;border-right:1px solid #222}.ds-benefits article:last-child{border-right:0}.ds-benefits i{font-size:22px}.ds-benefits h3{margin:0 0 4px;font-size:13px;letter-spacing:.11em;text-transform:uppercase}.ds-benefits p{margin:0;color:#888;font-size:13px}
 @media(max-width:900px){.ds-hero-desktop{display:none}.ds-hero-mobile{display:block}.ds-category-grid{grid-template-columns:1fr 1fr}.ds-category-main{grid-column:1/-1}.ds-category-card{min-height:470px}.ds-story{grid-template-columns:1fr}.ds-story-media{min-height:540px}.ds-benefits{grid-template-columns:1fr}.ds-benefits article{border-right:0;border-bottom:1px solid #222;justify-content:flex-start}.ds-benefits article:last-child{border-bottom:0}}
-@media(max-width:600px){.ds-hero{min-height:calc(100vh - 96px)}.ds-hero-content{width:calc(100% - 32px);padding-bottom:70px}.ds-hero h1{font-size:16vw}.ds-hero-actions{align-items:flex-start;flex-direction:column;gap:20px}.ds-volume,.ds-scroll-hint{display:none}.ds-products-section,.ds-categories{width:calc(100% - 28px);padding:75px 0}.ds-section-head{align-items:flex-start;flex-direction:column;margin-bottom:30px}.ds-category-grid{grid-template-columns:1fr}.ds-category-main{grid-column:auto}.ds-category-card{min-height:430px}.ds-story-media{min-height:430px}.ds-story-content{padding:55px 22px}.ds-benefits{width:calc(100% - 28px)}}
+@media(max-width:600px){.ds-hero{min-height:calc(100vh - 96px)}.ds-hero-content{width:calc(100% - 32px);padding-bottom:70px}.ds-hero h1{
+    font-size:clamp(58px,15vw,82px);
+    line-height:.88;
+}.ds-hero-actions{align-items:flex-start;flex-direction:column;gap:20px}.ds-volume,.ds-scroll-hint{display:none}.ds-products-section,.ds-categories{width:calc(100% - 28px);padding:75px 0}.ds-section-head{align-items:flex-start;flex-direction:column;margin-bottom:30px}.ds-category-grid{grid-template-columns:1fr}.ds-category-main{grid-column:auto}.ds-category-card{min-height:430px}.ds-story-media{min-height:430px}.ds-story-content{padding:55px 22px}.ds-benefits{width:calc(100% - 28px)}.ds-manifesto-strip{
+    min-height:68px;
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    gap:22px;
+    padding:0 18px;
+    overflow-x:auto;
+    overflow-y:hidden;
+    white-space:nowrap;
+    scrollbar-width:none;
+    -ms-overflow-style:none;
+}
+
+.ds-manifesto-strip::-webkit-scrollbar{
+    display:none;
+}
+.ds-hero-copy{
+    font-size:17px;
+    line-height:1.6;
+}
+.ds-button{
+    width:100%;
+    max-width:330px;
+}
+
+html,
+body{
+    overflow-x:hidden;
+}
+
+.ds-home{
+    overflow-x:hidden;
+}
+
+}

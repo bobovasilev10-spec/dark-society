@@ -11,6 +11,34 @@ import { useTranslation } from "react-i18next";
 import * as cartService from "../services/cartService";
 import { toast } from "react-toastify";
 import Loader from "../components/utils/Loader";
+function RadioIndicator({ checked }) {
+    return (
+        <span
+            className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full border transition-all duration-200 ${
+                checked
+                    ? "border-white bg-white"
+                    : "border-white/40 bg-transparent"
+            }`}
+            aria-hidden="true"
+        >
+            <svg
+                className={`h-3 w-3 text-black transition-opacity duration-200 ${
+                    checked ? "opacity-100" : "opacity-0"
+                }`}
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+            >
+                <path
+                    fillRule="evenodd"
+                    d="M16.704 5.29a1 1 0 010 1.42l-7.2 7.2a1 1 0 01-1.415 0L3.296 9.118a1 1 0 111.414-1.414l4.086 4.086 6.493-6.5a1 1 0 011.415 0z"
+                    clipRule="evenodd"
+                />
+            </svg>
+        </span>
+    );
+}
+
 export default function Cart() {
     const { t } = useTranslation();
     const { cart, applyCoupon, removeCoupon } = useCart();
@@ -458,11 +486,13 @@ export default function Cart() {
                                                 />
                                                 <label
                                                     htmlFor={id}
-                                                    className="flex min-h-28 cursor-pointer items-center gap-4 border border-white/10 bg-black/20 p-5 transition hover:border-white/30 peer-checked:border-white peer-checked:bg-white/[0.06]"
+                                                    className={`flex min-h-28 cursor-pointer items-center gap-4 border bg-black/20 p-5 transition hover:border-white/30 ${
+                                                        deliveryType === value
+                                                            ? "border-white bg-white/[0.06] shadow-[0_0_0_1px_rgba(255,255,255,0.2),0_0_28px_rgba(255,255,255,0.06)]"
+                                                            : "border-white/10"
+                                                    }`}
                                                 >
-                                                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-white/40">
-                                                        <span className="h-2 w-2 rounded-full bg-white opacity-0 peer-checked:opacity-100" />
-                                                    </span>
+                                                    <RadioIndicator checked={deliveryType === value} />
 
                                                     <div className="min-w-0 flex-1">
                                                         <strong className="text-sm uppercase tracking-[0.08em]">
@@ -541,9 +571,13 @@ export default function Cart() {
                                             />
                                             <label
                                                 htmlFor="at_delivery"
-                                                className="flex min-h-24 cursor-pointer items-center gap-4 border border-white/10 bg-black/20 p-5 transition hover:border-white/30 peer-checked:border-white peer-checked:bg-white/[0.06]"
+                                                className={`flex min-h-24 cursor-pointer items-center gap-4 border bg-black/20 p-5 transition hover:border-white/30 ${
+                                                    formData.payment_method === "at_delivery"
+                                                        ? "border-white bg-white/[0.06] shadow-[0_0_0_1px_rgba(255,255,255,0.2),0_0_28px_rgba(255,255,255,0.06)]"
+                                                        : "border-white/10"
+                                                }`}
                                             >
-                                                <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-white/40" />
+                                                <RadioIndicator checked={formData.payment_method === "at_delivery"} />
                                                 <strong className="text-sm uppercase tracking-[0.08em]">
                                                     {t("Наложен платеж")}
                                                 </strong>
@@ -563,9 +597,13 @@ export default function Cart() {
                                         />
                                         <label
                                             htmlFor="online_pos"
-                                            className="flex min-h-24 cursor-pointer items-center gap-4 border border-white/10 bg-black/20 p-5 transition hover:border-white/30 peer-checked:border-white peer-checked:bg-white/[0.06]"
+                                            className={`flex min-h-24 cursor-pointer items-center gap-4 border bg-black/20 p-5 transition hover:border-white/30 ${
+                                                formData.payment_method === "online_pos"
+                                                    ? "border-white bg-white/[0.06] shadow-[0_0_0_1px_rgba(255,255,255,0.2),0_0_28px_rgba(255,255,255,0.06)]"
+                                                    : "border-white/10"
+                                            }`}
                                         >
-                                            <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-white/40" />
+                                            <RadioIndicator checked={formData.payment_method === "online_pos"} />
                                             <strong className="text-sm uppercase tracking-[0.08em]">
                                                 {t("Плащане с карта")}
                                             </strong>
