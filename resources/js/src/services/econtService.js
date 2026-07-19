@@ -1,6 +1,6 @@
 import { getCsrfToken } from "../utils";
 
-const baseUrl = process.env.APP_URL;
+const baseUrl = "";
 
 export const getCities = async (city) => {
     try {

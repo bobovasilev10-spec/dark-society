@@ -14,16 +14,16 @@ use App\Http\Controllers\ContactUsController;
 
 // Auth routes
 //create a registration request route and limit the request to 10 per minute
-Route::post('/register', [AuthController::class, 'register'])->name('register')->middleware('throttle:20,1');
+Route::post('/register', [AuthController::class, 'register'])->name('register.store')->middleware('throttle:20,1');
 
 //User data handling and auth
-Route::post('/login', [AuthController::class, 'login'])->name('login');
+Route::post('/login', [AuthController::class, 'login'])->name('login.store');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::post('/change-password', [AuthController::class, 'changePassword'])->name('change-password');
 
 Route::post('/reset-password', [AuthController::class, 'sendResetLinkEmail'])
     ->middleware('guest')
-    ->name('password.reset');
+    ->name('password.reset.store');
 
 Route::post('/check-reset-token', [AuthController::class, 'checkResetToken'])
     ->middleware('guest')
